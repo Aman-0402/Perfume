@@ -135,7 +135,7 @@ export default function BrandEthos() {
     <section className="py-28 md:py-40 luxury-section luxury-section-alt luxury-divider-glow relative overflow-hidden">
 
       {/* Background */}
-      <div className="absolute inset-0 pointer-events-none" style={{ background: 'rgba(9,6,5,0.22)' }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'rgba(250,247,242,0.22)' }} />
       {/* Cinematic glow behind emblem */}
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(201,168,76,0.11) 0%, rgba(95,28,45,0.08) 38%, transparent 68%)' }}
@@ -171,7 +171,7 @@ export default function BrandEthos() {
           </motion.p>
 
           <div ref={headRef} className="w-full">
-            <h2 className="luxury-heading text-4xl md:text-5xl lg:text-6xl text-ivory">
+            <h2 className="luxury-heading text-4xl md:text-5xl lg:text-6xl text-ivory" style={{ color: '#3B1F0F' }}>
               Every Scent
               <br />
               <span className="italic text-gold-300">Tells A Story</span>
@@ -193,12 +193,12 @@ export default function BrandEthos() {
             viewport={{ once: true, margin: '-80px' }}
             className="flex flex-col gap-6"
           >
-            <motion.p variants={textItem} className="luxury-body max-w-lg" style={{ color: 'rgba(255,252,245,0.88)' }}>
+            <motion.p variants={textItem} className="luxury-body max-w-lg" style={{ color: 'rgba(59,31,15,0.90)' }}>
               At M. M. Attarwala, we believe fragrance is deeply personal.
               Every bottle we craft is a conversation between you and
               your senses — blended fresh, just for you.
             </motion.p>
-            <motion.p variants={textItem} className="luxury-body max-w-md" style={{ color: 'rgba(255,252,245,0.82)' }}>
+            <motion.p variants={textItem} className="luxury-body max-w-md" style={{ color: 'rgba(59,31,15,0.80)' }}>
               Rooted in the rich tradition of Indian and Arabic attar-making,
               we source the finest raw ingredients and blend them with care.
               No mass production. No shortcuts. No compromise.
@@ -225,7 +225,7 @@ export default function BrandEthos() {
                 >
                   {icon}
                 </motion.span>
-                <span className="text-[10px] tracking-[0.25em] uppercase text-ivory/80 group-hover:text-ivory transition-colors duration-300 whitespace-nowrap">
+                <span className="text-[10px] tracking-[0.25em] uppercase text-ivory/80 group-hover:text-ivory transition-colors duration-300 whitespace-nowrap" style={{ color: 'rgba(59,31,15,0.65)' }}>
                   {label}
                 </span>
               </motion.div>

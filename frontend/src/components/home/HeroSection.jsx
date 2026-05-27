@@ -268,7 +268,7 @@ export default function HeroSection() {
 
       {/* Ambient orbs */}
       <div ref={orb1Ref} className="absolute top-1/4 left-1/4 w-[560px] h-[560px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(201,168,76,0.13) 0%, transparent 68%)', filter: 'blur(44px)' }} />
-      <div ref={orb2Ref} className="absolute bottom-1/3 right-1/4 w-[520px] h-[520px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(80,23,41,0.34) 0%, rgba(59,31,15,0.22) 42%, transparent 72%)', filter: 'blur(62px)' }} />
+      <div ref={orb2Ref} className="absolute bottom-1/3 right-1/4 w-[520px] h-[520px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(201,168,76,0.10) 0%, rgba(61,107,94,0.07) 42%, transparent 72%)', filter: 'blur(62px)' }} />
       <div ref={orb3Ref} className="absolute top-2/3 left-1/2 w-[420px] h-[420px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(132,70,24,0.12) 0%, transparent 70%)', filter: 'blur(54px)' }} />
       {/* Deep amber sweep behind bottle */}
       <div className="absolute top-0 right-0 w-[760px] h-full pointer-events-none" style={{ background: 'radial-gradient(ellipse at 80% 50%, rgba(170,98,28,0.16) 0%, rgba(64,20,35,0.10) 42%, transparent 66%)', filter: 'blur(82px)' }} />
@@ -295,7 +295,8 @@ export default function HeroSection() {
             <div className="overflow-hidden">
               <motion.h1
                 variants={lineReveal}
-                className="luxury-hero italic text-[52px] sm:text-[72px] md:text-[96px] lg:text-[106px] xl:text-[130px] text-ivory"
+                className="luxury-hero italic text-[52px] sm:text-[72px] md:text-[96px] lg:text-[106px] xl:text-[130px]"
+                style={{ color: '#3B1F0F' }}
               >
                 Crafted
               </motion.h1>
@@ -373,7 +374,7 @@ export default function HeroSection() {
       </div>
 
 {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-36 pointer-events-none" style={{ background: 'linear-gradient(to top, #100908, rgba(16,9,8,0.72), transparent)' }} />
+      <div className="absolute bottom-0 left-0 right-0 h-36 pointer-events-none" style={{ background: 'linear-gradient(to top, #FAF7F2, transparent)' }} />
     </section>
   )
 }

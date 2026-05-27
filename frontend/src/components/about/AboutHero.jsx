@@ -19,15 +19,15 @@ export default function AboutHero() {
         minHeight: '75vh',
         paddingTop: 'clamp(100px, 11vw, 140px)',
         paddingBottom: '5vh',
-        background: 'linear-gradient(160deg, #0a0705 0%, #0d0807 40%, #0a0705 70%, #090605 100%)',
+        background: 'linear-gradient(160deg, #FAF7F2 0%, #F0EBE1 40%, #FAF7F2 70%, #F5F2EC 100%)',
       }}
     >
       {/* Atmospheric glows */}
       <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 60% 55% at 75% 40%, rgba(156,88,28,0.18) 0%, transparent 65%)',
+        background: 'radial-gradient(ellipse 60% 55% at 75% 40%, rgba(201,168,76,0.08) 0%, transparent 65%)',
       }} />
       <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 50% 45% at 15% 70%, rgba(84,25,42,0.14) 0%, transparent 65%)',
+        background: 'radial-gradient(ellipse 50% 45% at 15% 70%, rgba(61,107,94,0.06) 0%, transparent 65%)',
       }} />
       <div className="absolute top-0 right-0 w-[800px] h-[500px] pointer-events-none" style={{
         background: 'radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.07) 0%, transparent 60%)',
@@ -106,7 +106,7 @@ export default function AboutHero() {
               lineHeight: 0.90,
             }}
           >
-            <span style={{ color: 'rgba(245,241,234,0.97)', fontStyle: 'italic' }}>Our&nbsp;</span>
+            <span style={{ color: '#3B1F0F', fontStyle: 'italic' }}>Our&nbsp;</span>
             <span style={{
               background: 'linear-gradient(135deg, #E2C27D 0%, #C9A84C 38%, #A8862E 65%, #C9A84C 100%)',
               WebkitBackgroundClip: 'text',
@@ -135,7 +135,7 @@ export default function AboutHero() {
             className="font-heading italic max-w-sm"
             style={{
               fontSize: 'clamp(17px, 1.8vw, 24px)',
-              color: 'rgba(236,230,220,0.82)',
+              color: 'rgba(59,31,15,0.72)',
               letterSpacing: '0.005em',
               lineHeight: 1.4,
             }}
@@ -165,7 +165,7 @@ export default function AboutHero() {
       {/* Bottom fade */}
       <div
         className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-        style={{ background: 'linear-gradient(to top, #0c0806, transparent)' }}
+        style={{ background: 'linear-gradient(to top, #FAF7F2, transparent)' }}
       />
 
       {/* Bottom gold line */}

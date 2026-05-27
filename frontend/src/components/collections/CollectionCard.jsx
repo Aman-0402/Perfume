@@ -15,7 +15,7 @@ const SPRING = { stiffness: 180, damping: 28, mass: 0.8 }
 /* ─── CSS bottle silhouette used when no image prop is provided ─── */
 function BottlePlaceholder({ accentColor, arabicName }) {
   return (
-    <div className="absolute inset-0 flex items-center justify-center">
+    <div className="absolute inset-0 flex items-center justify-center" style={{ background: '#F5F0E8' }}>
       <div className="relative flex flex-col items-center" style={{ height: '82%' }}>
         {/* Cap */}
         <div style={{
@@ -111,7 +111,7 @@ export default function CollectionCard({ product, index, featured = false }) {
   const cardShadow = useTransform(
     [rawX, rawY],
     ([x, y]) =>
-      `${-x * 30}px ${-y * 22}px 55px rgba(0,0,0,0.6), 0 0 45px ${accentColor}12, 0 6px 40px rgba(0,0,0,0.5), 0 1px 0 rgba(201,168,76,0.08)`
+      `${-x * 18}px ${-y * 14}px 40px rgba(59,31,15,0.10), 0 0 45px ${accentColor}12, 0 8px 40px rgba(59,31,15,0.08), 0 1px 0 rgba(201,168,76,0.08)`
   )
 
   /* ── Event handlers ── */
@@ -294,10 +294,13 @@ export default function CollectionCard({ product, index, featured = false }) {
             </span>
           )}
           {isBestseller && (
-            <span className="text-[8px] tracking-[0.3em] uppercase px-2.5 py-1 border border-gold-400/50 text-gold-400">
+            <span className="teal-badge">
               Bestseller
             </span>
           )}
+          <span className="teal-badge">
+            Alcohol Free
+          </span>
         </div>
 
         {/* Product number */}
@@ -342,8 +345,8 @@ export default function CollectionCard({ product, index, featured = false }) {
         className="p-3 sm:p-5 flex flex-col gap-2 sm:gap-3 flex-1 border border-t-0 transition-all duration-500"
         style={{
           background: isActive
-            ? 'rgba(22,15,6,0.99)'
-            : 'linear-gradient(180deg, rgba(18,12,5,0.98) 0%, rgba(14,9,3,0.98) 100%)',
+            ? 'rgba(255,255,255,0.96)'
+            : 'linear-gradient(180deg, rgba(255,255,255,0.90) 0%, rgba(250,247,242,0.92) 100%)',
           borderColor: isActive ? `${accentColor}28` : `${accentColor}12`,
           paddingBottom: '16px',
         }}
@@ -361,7 +364,7 @@ export default function CollectionCard({ product, index, featured = false }) {
         <div className="flex items-start justify-between gap-2">
           <div>
             <h3 className={`font-heading ${featured ? 'text-lg sm:text-[1.7rem]' : 'text-base sm:text-[1.45rem]'} transition-colors duration-400 leading-tight`}
-              style={{ color: isActive ? 'rgba(232,200,132,1)' : 'rgba(255,252,245,0.97)' }}>
+              style={{ color: isActive ? 'rgba(201,168,76,1)' : '#3B1F0F' }}>
               {name}
             </h3>
           </div>
@@ -369,7 +372,7 @@ export default function CollectionCard({ product, index, featured = false }) {
             className="flex-shrink-0 mt-1 transition-colors duration-400"
             animate={{ x: isActive ? 4 : 0, opacity: isActive ? 1 : 0.2 }}
             transition={{ duration: 0.35 }}
-            style={{ color: isActive ? accentColor : 'rgba(255,252,245,0.55)' }}
+            style={{ color: isActive ? accentColor : 'rgba(59,31,15,0.40)' }}
           >
             <ArrowRight size={14} strokeWidth={1.2} />
           </motion.div>
@@ -377,7 +380,7 @@ export default function CollectionCard({ product, index, featured = false }) {
 
         {/* Description */}
         <p className="font-normal leading-[1.75]"
-          style={{ fontSize: '0.875rem', color: isActive ? 'rgba(245,241,234,0.94)' : 'rgba(236,230,220,0.84)', transition: 'color 0.4s' }}>
+          style={{ fontSize: '0.875rem', color: isActive ? 'rgba(59,31,15,0.90)' : 'rgba(59,31,15,0.72)', transition: 'color 0.4s' }}>
           {desc}
         </p>
 
@@ -429,7 +432,7 @@ export default function CollectionCard({ product, index, featured = false }) {
                 className="text-[10px] tracking-[0.22em] uppercase font-semibold"
                 animate={{ opacity: isActive ? 1 : 0, x: isActive ? 0 : -8 }}
                 transition={{ duration: 0.35 }}
-                style={{ color: 'rgba(255,252,245,0.72)' }}
+                style={{ color: 'rgba(59,31,15,0.65)' }}
               >
                 Enquire
               </motion.span>

@@ -123,12 +123,12 @@ function FragranceCard({ fragrance, index, activeId, onTap }) {
       ].join(' ')}
       style={{
         background: featured
-          ? 'linear-gradient(155deg, rgba(44,22,12,0.94) 0%, rgba(18,11,9,0.96) 58%, rgba(47,15,23,0.86) 100%)'
-          : 'linear-gradient(155deg, rgba(24,15,12,0.94) 0%, rgba(16,11,10,0.97) 58%, rgba(29,13,18,0.82) 100%)',
+          ? 'linear-gradient(155deg, rgba(255,255,255,0.88) 0%, rgba(250,247,242,0.92) 58%, rgba(255,255,255,0.80) 100%)'
+          : 'linear-gradient(155deg, rgba(255,255,255,0.84) 0%, rgba(250,247,242,0.90) 58%, rgba(255,255,255,0.78) 100%)',
         perspective: '1400px',
         boxShadow: featured
-          ? '0 30px 90px rgba(0,0,0,0.38), 0 0 70px rgba(201,168,76,0.10), inset 0 1px 0 rgba(255,255,255,0.035)'
-          : '0 24px 70px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.025)',
+          ? '0 30px 90px rgba(59,31,15,0.12), 0 0 70px rgba(201,168,76,0.08), inset 0 1px 0 rgba(255,255,255,0.70)'
+          : '0 24px 70px rgba(59,31,15,0.08), inset 0 1px 0 rgba(255,255,255,0.60)',
       }}
     >
 
@@ -200,13 +200,13 @@ function FragranceCard({ fragrance, index, activeId, onTap }) {
       {/* ── CARD BODY: flat, no tilt, border-aligned ───────────────── */}
       <div className="p-7 flex flex-col gap-4 flex-1 pb-10">
         <div className="flex items-center justify-between gap-3">
-          <h3 className="luxury-card-title text-[1.75rem] md:text-[2rem] text-ivory group-hover:text-gold-300 transition-colors duration-300">
+          <h3 className="luxury-card-title text-[1.75rem] md:text-[2rem] group-hover:text-gold-300 transition-colors duration-300" style={{ color: '#3B1F0F' }}>
             {name}
           </h3>
           <ArrowRight size={14} strokeWidth={1} className="text-gold-400/60 group-hover:text-gold-400 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
         </div>
 
-        <p className="luxury-body" style={{ maxWidth: '92%', color: 'rgba(245,241,234,0.90)' }}>{desc}</p>
+        <p className="luxury-body" style={{ maxWidth: '92%', color: 'rgba(59,31,15,0.75)' }}>{desc}</p>
 
         <div className="flex flex-wrap gap-2 mt-auto pt-3">
           {notes.map((note) => (
@@ -236,15 +236,15 @@ export default function FeaturedSection() {
 
       {/* Atmospheric glow zone behind heading */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(170,96,31,0.14) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 65%)' }}
       />
       {/* Warm amber glow — bottom left */}
       <div className="absolute bottom-0 left-0 w-[500px] h-[400px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 0% 100%, rgba(110,46,23,0.11) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(ellipse at 0% 100%, rgba(201,168,76,0.06) 0%, transparent 65%)' }}
       />
       {/* Cool right accent */}
       <div className="absolute top-1/2 right-0 w-[400px] h-[600px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 100% 50%, rgba(78,22,42,0.16) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse at 100% 50%, rgba(61,107,94,0.06) 0%, transparent 70%)' }}
       />
 
     <div className="cx relative z-10">
@@ -252,8 +252,8 @@ export default function FeaturedSection() {
       {/* Header */}
       <div ref={headingRef} className="w-full text-center mb-20">
         <p className="editorial-label mb-8">Our Craft</p>
-        <h2 className="luxury-heading text-4xl sm:text-5xl md:text-7xl text-ivory mb-8 text-center">Signature Scents</h2>
-        <p className="font-heading italic text-[#ECE6DC] text-xl md:text-2xl max-w-md mx-auto text-center leading-relaxed">
+        <h2 className="luxury-heading text-4xl sm:text-5xl md:text-7xl mb-8 text-center" style={{ color: '#3B1F0F' }}>Signature Scents</h2>
+        <p className="font-heading italic text-xl md:text-2xl max-w-md mx-auto text-center leading-relaxed" style={{ color: 'rgba(59,31,15,0.75)' }}>
           Each fragrance tells a story, each drop holds a world.
         </p>
       </div>

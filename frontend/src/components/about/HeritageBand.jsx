@@ -46,7 +46,7 @@ export default function HeritageBand() {
       ref={sectionRef}
       className="relative overflow-hidden py-16 md:py-20 border-y border-gold-400/10"
       style={{
-        background: 'linear-gradient(180deg, rgba(59,31,15,0.18) 0%, rgba(59,31,15,0.35) 50%, rgba(59,31,15,0.18) 100%)',
+        background: 'linear-gradient(180deg, rgba(240,235,225,0.60) 0%, rgba(240,235,225,0.85) 50%, rgba(240,235,225,0.60) 100%)',
       }}
     >
       {/* Repeating diamond separators */}
@@ -63,12 +63,13 @@ export default function HeritageBand() {
       <div className="overflow-hidden px-6 md:px-12 text-center">
         <p
           ref={textRef}
-          className="font-heading text-ivory/88 leading-tight select-none"
+          className="font-heading leading-tight select-none"
           style={{
             fontSize: 'clamp(2rem, 6vw, 6.5rem)',
             fontWeight: 300,
             fontStyle: 'italic',
             clipPath: 'inset(0 100% 0 0)',
+            color: '#3B1F0F',
           }}
         >
           Rooted in India.{' '}
