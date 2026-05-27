@@ -123,12 +123,12 @@ function FragranceCard({ fragrance, index, activeId, onTap }) {
       ].join(' ')}
       style={{
         background: featured
-          ? 'linear-gradient(155deg, rgba(255,255,255,0.88) 0%, rgba(250,247,242,0.92) 58%, rgba(255,255,255,0.80) 100%)'
-          : 'linear-gradient(155deg, rgba(255,255,255,0.84) 0%, rgba(250,247,242,0.90) 58%, rgba(255,255,255,0.78) 100%)',
+          ? 'linear-gradient(155deg, rgba(248,244,238,0.96) 0%, rgba(239,230,216,0.96) 58%, rgba(248,244,238,0.90) 100%)'
+          : 'linear-gradient(155deg, rgba(248,244,238,0.94) 0%, rgba(239,230,216,0.94) 58%, rgba(248,244,238,0.88) 100%)',
         perspective: '1400px',
         boxShadow: featured
-          ? '0 30px 90px rgba(59,31,15,0.12), 0 0 70px rgba(201,168,76,0.08), inset 0 1px 0 rgba(255,255,255,0.70)'
-          : '0 24px 70px rgba(59,31,15,0.08), inset 0 1px 0 rgba(255,255,255,0.60)',
+          ? '0 30px 90px rgba(40,20,10,0.14), 0 0 70px rgba(200,169,107,0.10), inset 0 1px 0 rgba(255,255,255,0.70)'
+          : '0 24px 70px rgba(40,20,10,0.10), 0 2px 0 rgba(200,169,107,0.08), inset 0 1px 0 rgba(255,255,255,0.60)',
       }}
     >
 

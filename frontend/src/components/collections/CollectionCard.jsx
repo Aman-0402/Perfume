@@ -111,7 +111,7 @@ export default function CollectionCard({ product, index, featured = false }) {
   const cardShadow = useTransform(
     [rawX, rawY],
     ([x, y]) =>
-      `${-x * 18}px ${-y * 14}px 40px rgba(59,31,15,0.10), 0 0 45px ${accentColor}12, 0 8px 40px rgba(59,31,15,0.08), 0 1px 0 rgba(201,168,76,0.08)`
+      `${-x * 18}px ${-y * 14}px 40px rgba(40,20,10,0.12), 0 0 45px ${accentColor}18, 0 10px 40px rgba(40,20,10,0.10), 0 1px 0 rgba(200,169,107,0.12)`
   )
 
   /* ── Event handlers ── */
@@ -162,7 +162,7 @@ export default function CollectionCard({ product, index, featured = false }) {
       style={{
         perspective: '900px',
         boxShadow: cardShadow,
-        border: `1px solid ${isActive ? accentColor + '35' : accentColor + '18'}`,
+        border: `1px solid ${isActive ? accentColor + '55' : accentColor + '2A'}`,
         transition: 'border-color 0.5s',
         willChange: 'transform',
         outline: `1px solid ${isActive ? accentColor + '12' : 'transparent'}`,
@@ -345,9 +345,9 @@ export default function CollectionCard({ product, index, featured = false }) {
         className="p-3 sm:p-5 flex flex-col gap-2 sm:gap-3 flex-1 border border-t-0 transition-all duration-500"
         style={{
           background: isActive
-            ? 'rgba(255,255,255,0.96)'
-            : 'linear-gradient(180deg, rgba(255,255,255,0.90) 0%, rgba(250,247,242,0.92) 100%)',
-          borderColor: isActive ? `${accentColor}28` : `${accentColor}12`,
+            ? 'rgba(248,244,238,0.98)'
+            : 'linear-gradient(180deg, rgba(248,244,238,0.95) 0%, rgba(239,230,216,0.96) 100%)',
+          borderColor: isActive ? `${accentColor}45` : `${accentColor}22`,
           paddingBottom: '16px',
         }}
       >

@@ -85,7 +85,7 @@ Zyrah/
 │   │   │   ├── ContactForm.jsx         # Glassmorphism, chips, shimmer CTA
 │   │   │   └── ContactInfo.jsx         # WA/phone/email/address/hours/products
 │   │   ├── layout/
-│   │   │   ├── Navbar.jsx              # Black Gold White, blur, mobile overlay
+│   │   │   ├── Navbar.jsx              # Cream/gold light theme, blur, mobile overlay
 │   │   │   ├── Footer.jsx              # Quote, 3-col (2-col nav on mobile), social
 │   │   │   └── RouteScrollToTop.jsx    # useLocation → window.scrollTo(0,0)
 │   │   └── ui/
@@ -118,29 +118,56 @@ Zyrah/
 
 ## 5. Design System
 
+### Theme Direction
+
+**Cinematic Arabian Luxury Perfume Brand** — light, airy department-store elegance with warm ivory/cream base, rich antique gold accents, deep espresso-brown typography, and Oud Amber as the signature accent. Footer stays dark (espresso anchor). ContactHero scrim stays dark (photo requires it).
+
 ### Color Tokens (`globals.css @theme`)
 
 | Token | Hex | Usage |
 |---|---|---|
-| `gold-300` | `#E2C27D` | Hover states, light gold |
-| `gold-400` | `#C9A84C` | Primary gold — CTAs, active, borders |
-| `gold-500` | `#A8862E` | Deep gold, gradients |
+| `gold-300` | `#D9B06A` | Refined metallic hover gold |
+| `gold-400` | `#C8A96B` | Primary gold — CTAs, active, borders |
+| `gold-500` | `#9A6B2E` | Deep gold, gradients |
 | `gold-600` | `#8A6D1E` | Darkest gold, pressed states |
-| `ivory` | `#F5F0E8` | Primary text |
-| `black` | `#0A0A0A` | Background base |
+| `ivory` | `#F5F0E8` | Card/panel backgrounds |
+| `cream` | `#F7F3EE` | Body + page background |
+| `cream-dark` | `#EFE6D8` | Section alternate background |
+| `brown` | `#3A2418` | Primary text, headings |
+| `brown-light` | `#6B5242` | Secondary text, descriptions |
+| `espresso` | `#1A120E` | Footer + dark section depth |
+| `oud-amber` | `#A45A2A` | Signature accent — badges, highlights |
+| `oud-amber-light` | `#C26D32` | Oud amber hover |
+| `black` | `#0B0807` | Deepest dark |
 
-### Background System (unified)
+### Background System (light — unified)
 
-All sections use a shared base so no visible seams between sections:
+All sections use shared cream base so no visible seams:
 
 ```
-body:                    #090605  (solid base)
-.luxury-page:            radial warm glows + linear #0a0705→#0c0806
-.luxury-section::before: rgba(9,6,5, 0.80–0.82) semi-transparent overlay
-.luxury-section-alt::before: same opacity, different tint glows
+body:                      #F7F3EE  (warm cream base, subtle gold/amber radial gradients)
+.luxury-page:              cream gradient #F7F3EE→#EFE6D8 + warm/teal glows
+.luxury-section::before:   rgba(247,243,238, 0.78–0.80) cream overlay
+.luxury-section-alt::before: rgba(239,230,216, 0.80–0.82) slightly warmer overlay
 ```
 
-**Rule:** never use near-opaque (0.95+) section backgrounds. Keep at 0.75–0.85 so the page-level gradient unifies all sections.
+**Footer exception:** stays `#050302` dark — intentional luxury anchor.
+**ContactHero exception:** dark scrim kept — photo requires it for legibility.
+
+**Rule:** section overlays stay in 0.75–0.85 opacity range so page-level cream gradient unifies all sections. Never use 0.95+ opaque section backgrounds (creates seams).
+
+### Utility Class Colors
+
+| Class | Color | Role |
+|---|---|---|
+| `.luxury-hero`, `.luxury-heading`, `.luxury-card-title` | `#3A2418` | Headings |
+| `.luxury-body`, `.editorial-copy` | `rgba(58,36,24,0.80)` | Body text |
+| `.editorial-muted` | `rgba(107,82,66,0.70)` | Muted/caption text |
+| `.luxury-label` | `#C8A96B` | Gold labels |
+| `.glass` | `rgba(255,255,255,0.68)` | Light glassmorphism |
+| `.luxury-panel` | `rgba(255,255,255,0.82)` | Light panel/card bg |
+| `.teal-badge` | bg `#A45A2A`, text `#F7F3EE` | Oud Amber badge (Bestseller, Alcohol Free) |
+| `.luxury-divider-glow::before` | clean 1px gold line | Section separators — sharp, not blurry |
 
 ### Typography
 
@@ -296,45 +323,66 @@ Mobile-first always. Use `clamp()` for fluid font/spacing. Never desktop-first m
 
 ### Navigation & UX
 - [x] `RouteScrollToTop` — scroll reset on every route change
-- [x] Navbar — Black Gold White premium redesign, gold micro-lines, blur transitions
+- [x] Navbar — cream backdrop (light theme), gold micro-lines, blur transitions
 - [x] Navbar — CTA button gold-filled with `fontWeight: 600` on hover
+- [x] Navbar — mobile overlay cream `rgba(250,247,242,0.98)`, brown links
 
 ### Home Page
 - [x] HeroSection — `paddingTop: clamp(96px,10vw,130px)` navbar clearance fix
+- [x] HeroSection — left-warm / right-dark cinematic vignette overlay
+- [x] HeroSection — amber bottle glow `drop-shadow(0 0 40px rgba(200,140,60,0.35))`
+- [x] HeroSection — cream bottom fade `#F7F3EE`
 - [x] FeaturedSection — mobile tap-to-hover (activeId state, touchActive toggle)
 - [x] FeaturedSection CTA — gold-filled button with shimmer sweep, `mt-16 md:mt-20`, GSAP reveal
-- [x] MarqueeStrip — background unified to `rgba(9,6,5,0.75)`, fade color `#090605`
-- [x] Home atmospheric bridge divs — all colors unified to `rgba(9,6,5,...)`
+- [x] FeaturedSection cards — warm cream bg `rgba(248,244,238)`, richer shadow
+- [x] MarqueeStrip — cream bg `rgba(240,235,225,0.92)`, cream fade `#F0EBE1`
+- [x] BrandEthos — cream overlay `rgba(250,247,242,0.22)`, brown text
 
 ### Collections
 - [x] ProductGrid — `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`, removed mobile stagger offset
 - [x] CollectionCard mobile — image uses `aspectRatio: '4/3'` (featured: `16/9`), not fixed height
 - [x] CollectionCard — desc, notes, "Handcrafted · Pure Essence" label always visible (no `hidden sm:*`)
 - [x] CollectionCard price — split format: `₹799 · 30ml` (was `₹799 for 30ml`)
+- [x] CollectionCard — warm cream content area `rgba(248,244,238)`, stronger gold border/shadow
+- [x] CollectionCard — Bestseller badge → `.teal-badge` (Oud Amber `#A45A2A`)
+- [x] CollectionCard — Alcohol Free static badge added (`.teal-badge`)
 
 ### About Page
 - [x] AboutHero — oversized one-line headline `clamp(56px,11vw,180px)`, no breadcrumb
 - [x] AboutHero — `75vh justify-center` (was `92vh justify-end` causing huge empty space)
-- [x] AboutHero background unified to `#090605` family
+- [x] AboutHero — cream bg `linear-gradient(160deg, #FAF7F2 ...)`, brown text
+- [x] HeritageBand — cream bg overlay, brown "Rooted in India." text (gold "Inspired by Arabia." unchanged)
 
 ### Contact Page
 - [x] ContactHero — full rewrite: `contactbackground.png` BG, `82vh`, scrim layers, animated eyebrow
 - [x] ContactHero — scrim lightened so background image shows: base `rgba(5,3,2,0.10)`
+- [x] ContactHero — dark scrim intentionally kept (photo legibility)
+- [x] ContactForm — light glass inputs `rgba(255,255,255,0.80)`, brown text
+- [x] ContactForm — inactive subject chips cream `rgba(255,255,255,0.80)`, brown text
 - [x] ContactForm — glassmorphism `backdrop-filter: blur(12px)`, animated gold underline on focus
 - [x] ContactForm — subject chips (pill shape), shimmer CTA with Send icon
 - [x] ContactInfo — icon circles `w-12 h-12`, cards with `borderRadius: 4px`, products pill tags
 - [x] Contact BottomCTA — "A fragrance crafted only for you" headline, gold-filled primary CTA
 
 ### Footer
-- [x] Footer background `#050302`
+- [x] Footer background `#050302` (stays dark — intentional)
+- [x] Footer social icon hover → teal `#3D6B5E` (was gold)
 - [x] Footer quote — wrapped in `py-16 md:py-24`, gold `◆` separator with `mb-16 md:mb-20`
 - [x] Footer mobile — nav links `grid grid-cols-2` (was single column text wall), `gap-10`
 
-### Background Unification (no section seams)
-- [x] `globals.css` `.luxury-section::before` — opacity reduced `0.96/0.98 → 0.80/0.82`
-- [x] `globals.css` `.luxury-section-alt::before` — opacity reduced `0.98/0.96 → 0.82/0.80`
-- [x] `globals.css` `.luxury-page` — gradient simplified, removed mid-stop causing lighter band
-- [x] `BrandEthos` explicit overlay — removed double-darkening, replaced with `rgba(9,6,5,0.22)`
+### Light Theme Rebrand (2026-05-27)
+- [x] Full site switched from dark cinematic → light airy luxury (all 5 pages, 11 components)
+- [x] `globals.css` — cream tokens, light body, all utility class colors to brown
+- [x] `globals.css` — `.luxury-divider-glow::before` → clean 1px gold line (was blurry glow)
+- [x] `globals.css` — `.teal-badge` added (now Oud Amber `#A45A2A`)
+
+### Palette Refinement (2026-05-27)
+- [x] Gold richer: `#C8A96B` primary, `#D9B06A` hover (metallic, not neon), `#9A6B2E` dark
+- [x] Text warmer: `#3A2418` main, `#6B5242` soft
+- [x] Signature accent: **Oud Amber** `#A45A2A` / `#C26D32` added as tokens
+- [x] Body bg: `#F7F3EE` (warmer than initial cream)
+- [x] Card contrast: `rgba(248,244,238)` warm cream, stronger borders + shadows
+- [x] Hero: left-warm/right-dark vignette, amber bottle glow
 
 ---
 
@@ -368,8 +416,8 @@ const containerRef = useGSAPStaggerReveal({ selector: '[data-reveal]', stagger: 
 - Opacity modifier: `text-gold-400/60`, `border-gold-400/15`
 - `font-heading` → Cormorant Garamond. `font-body` → Inter (default on `body`).
 
-### Background rule
-Never set section background opacity above `0.85`. Keep sections semi-transparent so the `.luxury-page` gradient unifies the whole page. Visible seams appear when sections are `0.95+` opaque.
+### Background rule (light theme)
+Section overlays stay in `0.75–0.85` opacity range so the page-level cream gradient (`#F7F3EE`) unifies all sections. Never use `0.95+` opaque section backgrounds — creates visible seams. Footer and ContactHero are exceptions (stay dark intentionally).
 
 ### BASE_URL
 Always use `import.meta.env.BASE_URL` prefix for public assets:

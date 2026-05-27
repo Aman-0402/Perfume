@@ -188,7 +188,7 @@ function CinematicBottle({ springX, springY }) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1.4, delay: 0.8, ease: [0.76, 0, 0.24, 1] }}
         >
-          <div ref={floatRef} className="relative">
+          <div ref={floatRef} className="relative" style={{ filter: 'drop-shadow(0 0 40px rgba(200,140,60,0.35))' }}>
             {/* Nozzle smoke */}
             <div className="absolute" style={{ top: 4, left: '50%' }}>
               {NOZZLE_SMOKE.map((s, i) => (
@@ -280,6 +280,15 @@ export default function HeroSection() {
       {/* Horizontal gold lines */}
       <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.5, delay: 0.2, ease: [0.76, 0, 0.24, 1] }} className="absolute left-0 right-0 h-px origin-left pointer-events-none" style={{ top: 'clamp(100px, 11vw, 136px)', background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent)' }} />
       <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.5, delay: 0.4, ease: [0.76, 0, 0.24, 1] }} className="absolute bottom-24 left-0 right-0 h-px origin-right pointer-events-none" style={{ background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent)' }} />
+
+      {/* Left-warm / right-dark cinematic split */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to right, rgba(247,243,238,0.18) 0%, transparent 45%, rgba(20,10,5,0.28) 100%)',
+          zIndex: 0,
+        }}
+      />
 
       {/* Layout */}
       <div className="cx relative z-10 grid grid-cols-1 lg:grid-cols-[55%_45%] items-center min-h-[80vh] pt-12 md:pt-16 pb-20 gap-8 lg:gap-4">
@@ -374,7 +383,7 @@ export default function HeroSection() {
       </div>
 
 {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-36 pointer-events-none" style={{ background: 'linear-gradient(to top, #FAF7F2, transparent)' }} />
+      <div className="absolute bottom-0 left-0 right-0 h-36 pointer-events-none" style={{ background: 'linear-gradient(to top, #F7F3EE, transparent)' }} />
     </section>
   )
 }
