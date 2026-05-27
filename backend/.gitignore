@@ -26,8 +26,18 @@ dist/
 build/
 *.egg-info/
 
+# Django static collection
+staticfiles/
+
+# Test cache
+.pytest_cache/
+
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+
+# Windows
+Thumbs.db
+**/Thumbs.db
