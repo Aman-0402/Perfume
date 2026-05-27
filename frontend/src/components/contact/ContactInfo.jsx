@@ -75,11 +75,11 @@ export default function ContactInfo() {
     <div ref={ref} className="flex flex-col gap-5">
 
       <div data-reveal>
-        <p className="text-[10px] tracking-[0.45em] uppercase mb-3" style={{ color: 'rgba(201,168,76,0.75)' }}>Reach Us</p>
-        <h2 className="font-heading text-3xl md:text-[2.6rem] mb-2 leading-tight" style={{ color: 'rgba(255,248,240,0.94)' }}>
-          We're <span className="italic" style={{ color: 'rgba(226,194,125,0.92)' }}>Here</span>
+        <p className="text-[10px] tracking-[0.45em] uppercase mb-3" style={{ color: '#9A6127' }}>Reach Us</p>
+        <h2 className="font-heading text-3xl md:text-[2.6rem] mb-2 leading-tight" style={{ color: '#2B160D' }}>
+          We're <span className="italic" style={{ color: '#9A6127' }}>Here</span>
         </h2>
-        <p className="text-[13px] leading-relaxed mb-2" style={{ color: 'rgba(236,230,220,0.68)' }}>
+        <p className="text-[13px] leading-relaxed mb-2" style={{ color: '#5C4638' }}>
           No bots. No auto-replies. Every message read personally.
         </p>
       </div>
@@ -90,25 +90,26 @@ export default function ContactInfo() {
           <div
             className="relative flex items-start gap-5 p-5 transition-all duration-400 group overflow-hidden"
             style={{
-              background: 'linear-gradient(160deg, rgba(201,168,76,0.03) 0%, rgba(201,168,76,0.01) 100%)',
-              border: '1px solid rgba(201,168,76,0.10)',
-              borderRadius: '4px',
+              background: 'linear-gradient(160deg, rgba(255,255,255,0.76) 0%, rgba(248,241,230,0.86) 100%)',
+              border: '1px solid rgba(154,97,39,0.16)',
+              borderRadius: '6px',
+              boxShadow: '0 10px 26px rgba(43,22,13,0.045)',
             }}
             onMouseEnter={e => {
-              e.currentTarget.style.background = 'linear-gradient(160deg, rgba(201,168,76,0.07) 0%, rgba(201,168,76,0.02) 100%)'
-              e.currentTarget.style.borderColor = 'rgba(201,168,76,0.28)'
+              e.currentTarget.style.background = 'linear-gradient(160deg, rgba(255,250,242,0.96) 0%, rgba(248,241,230,0.96) 100%)'
+              e.currentTarget.style.borderColor = 'rgba(154,97,39,0.32)'
             }}
             onMouseLeave={e => {
-              e.currentTarget.style.background = 'linear-gradient(160deg, rgba(201,168,76,0.03) 0%, rgba(201,168,76,0.01) 100%)'
-              e.currentTarget.style.borderColor = 'rgba(201,168,76,0.10)'
+              e.currentTarget.style.background = 'linear-gradient(160deg, rgba(255,255,255,0.76) 0%, rgba(248,241,230,0.86) 100%)'
+              e.currentTarget.style.borderColor = 'rgba(154,97,39,0.16)'
             }}
           >
             {/* Icon */}
             <div
               className="w-12 h-12 rounded-full border flex items-center justify-center flex-shrink-0 transition-all duration-400"
               style={{
-                borderColor: `${accent}28`,
-                background: `${accent}0C`,
+                borderColor: 'rgba(154,97,39,0.24)',
+                background: 'rgba(154,97,39,0.06)',
                 boxShadow: `0 0 0 0 ${accent}20`,
               }}
               onMouseEnter={e => {
@@ -120,24 +121,24 @@ export default function ContactInfo() {
                 e.currentTarget.style.borderColor = `${accent}28`
               }}
             >
-              <Icon size={20} strokeWidth={1.4} style={{ color: `${accent}90` }} />
+              <Icon size={20} strokeWidth={1.4} style={{ color: '#9A6127' }} />
             </div>
 
             <div className="flex flex-col gap-1 min-w-0 flex-1">
               <div className="flex items-baseline gap-2">
-                <p className="text-[9px] tracking-[0.24em] uppercase font-semibold" style={{ color: `${accent}AA` }}>
+                <p className="text-[9px] tracking-[0.24em] uppercase font-semibold" style={{ color: '#9A6127' }}>
                   {label}
                 </p>
                 {name && (
-                  <p className="text-[9px] tracking-[0.18em] uppercase" style={{ color: 'rgba(236,230,220,0.45)' }}>
+                  <p className="text-[9px] tracking-[0.18em] uppercase" style={{ color: 'rgba(92,70,56,0.62)' }}>
                     {name}
                   </p>
                 )}
               </div>
-              <p className="text-[14px] font-normal leading-snug" style={{ color: 'rgba(245,241,234,0.92)' }}>
+              <p className="text-[14px] font-semibold leading-snug" style={{ color: '#2B160D' }}>
                 {value}
               </p>
-              <p className="text-[12px] font-normal leading-relaxed" style={{ color: 'rgba(220,214,205,0.65)' }}>
+              <p className="text-[12px] font-normal leading-relaxed" style={{ color: '#5C4638' }}>
                 {sub}
               </p>
             </div>
@@ -166,13 +167,14 @@ export default function ContactInfo() {
         className="p-5 flex flex-col gap-4"
         style={{
           background: 'rgba(201,168,76,0.03)',
-          border: '1px solid rgba(201,168,76,0.09)',
-          borderRadius: '4px',
+          border: '1px solid rgba(154,97,39,0.16)',
+          borderRadius: '6px',
+          boxShadow: '0 10px 26px rgba(43,22,13,0.045)',
         }}
       >
         <div className="flex items-center gap-3">
-          <Package size={16} strokeWidth={1.4} style={{ color: 'rgba(201,168,76,0.60)' }} />
-          <p className="text-[9px] tracking-[0.32em] uppercase font-semibold" style={{ color: 'rgba(201,168,76,0.60)' }}>
+          <Package size={16} strokeWidth={1.4} style={{ color: '#9A6127' }} />
+          <p className="text-[9px] tracking-[0.32em] uppercase font-semibold" style={{ color: '#9A6127' }}>
             What We Make
           </p>
         </div>
@@ -182,9 +184,9 @@ export default function ContactInfo() {
               key={p}
               className="text-[10px] tracking-[0.18em] uppercase px-3 py-1.5 transition-colors duration-300"
               style={{
-                color: 'rgba(236,230,220,0.80)',
-                background: 'rgba(201,168,76,0.06)',
-                border: '1px solid rgba(201,168,76,0.16)',
+                color: '#5C4638',
+                background: 'rgba(255,255,255,0.60)',
+                border: '1px solid rgba(154,97,39,0.18)',
                 borderRadius: '99px',
               }}
             >
@@ -204,7 +206,7 @@ export default function ContactInfo() {
       >
         <div
           className="w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300"
-          style={{ borderColor: 'rgba(201,168,76,0.18)', background: 'rgba(201,168,76,0.04)' }}
+          style={{ borderColor: 'rgba(154,97,39,0.24)', background: 'rgba(154,97,39,0.06)' }}
           onMouseEnter={e => {
             e.currentTarget.style.borderColor = 'rgba(201,168,76,0.45)'
             e.currentTarget.style.background = 'rgba(201,168,76,0.10)'
@@ -216,13 +218,13 @@ export default function ContactInfo() {
             e.currentTarget.style.boxShadow = 'none'
           }}
         >
-          <Instagram size={16} strokeWidth={1.4} style={{ color: 'rgba(201,168,76,0.55)' }} />
+          <Instagram size={16} strokeWidth={1.4} style={{ color: '#9A6127' }} />
         </div>
         <span
           className="text-[11px] tracking-[0.24em] uppercase font-medium transition-colors duration-300"
-          style={{ color: 'rgba(236,230,220,0.70)' }}
-          onMouseEnter={e => e.currentTarget.style.color = 'rgba(255,252,245,0.90)'}
-          onMouseLeave={e => e.currentTarget.style.color = 'rgba(236,230,220,0.70)'}
+          style={{ color: '#5C4638' }}
+          onMouseEnter={e => e.currentTarget.style.color = '#2B160D'}
+          onMouseLeave={e => e.currentTarget.style.color = '#5C4638'}
         >
           Follow Our Journey
         </span>

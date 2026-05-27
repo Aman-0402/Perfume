@@ -19,10 +19,12 @@ function BottomCTA() {
   return (
     <div
       ref={ref}
-      className="relative overflow-hidden py-20 md:py-28 px-6 text-center"
+      className="relative overflow-hidden py-16 md:py-20 px-6 text-center"
       style={{
-        borderTop: '1px solid rgba(201,168,76,0.12)',
-        background: 'linear-gradient(180deg, rgba(30,14,8,0.60) 0%, rgba(18,8,6,0.85) 100%)',
+        border: '1px solid rgba(200,169,107,0.20)',
+        borderRadius: '8px',
+        background: 'linear-gradient(160deg, rgba(49,31,22,0.92) 0%, rgba(27,18,13,0.94) 100%)',
+        boxShadow: '0 24px 70px rgba(43,22,13,0.18), inset 0 1px 0 rgba(255,248,238,0.08)',
       }}
     >
       {/* Atmospheric glow */}
@@ -30,7 +32,7 @@ function BottomCTA() {
         background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,168,76,0.07) 0%, transparent 70%)',
       }} />
 
-      <div className="relative z-10 max-w-2xl mx-auto">
+      <div className="relative z-10 max-w-3xl mx-auto">
         <div className="flex items-center justify-center gap-4 mb-8">
           <div className="h-px w-12" style={{ background: 'linear-gradient(to right, transparent, rgba(201,168,76,0.50))' }} />
           <span style={{ color: 'rgba(201,168,76,0.55)', fontSize: '8px' }}>✦</span>
@@ -42,12 +44,12 @@ function BottomCTA() {
         </p>
         <h3 className="font-heading font-light mb-4 leading-tight" style={{
           fontSize: 'clamp(32px, 5vw, 56px)',
-          color: 'rgba(255,248,240,0.94)',
+          color: 'rgba(255,248,240,0.96)',
         }}>
           A fragrance crafted{' '}
           <span className="italic" style={{ color: 'rgba(226,194,125,0.92)' }}>only for you.</span>
         </h3>
-        <p className="text-[14px] leading-relaxed mb-10 max-w-md mx-auto" style={{ color: 'rgba(220,214,205,0.68)' }}>
+        <p className="text-[14px] leading-relaxed mb-10 max-w-lg mx-auto" style={{ color: 'rgba(245,241,234,0.78)' }}>
           No two blends are the same. Tell us your vision and we'll create something unforgettable.
         </p>
 
@@ -111,7 +113,11 @@ export default function Contact() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen relative luxury-page"
+      className="min-h-screen relative"
+      style={{
+        background:
+          'radial-gradient(ellipse 78% 52% at 22% 24%, rgba(183,106,47,0.055) 0%, transparent 68%), linear-gradient(180deg, #F1E7DA 0%, #EFE2D2 100%)',
+      }}
     >
       {/* Ambient particles across entire page */}
       {PARTICLES.map((p, i) => (
@@ -144,15 +150,22 @@ export default function Contact() {
         <ContactHero />
 
         {/* Main 2-col layout */}
-        <div className="cx py-16 md:py-24">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_420px] gap-14 lg:gap-24">
+        <div
+          className="relative py-16 md:py-24"
+          style={{
+            background: 'linear-gradient(180deg, #F1E7DA 0%, #EFE2D2 100%)',
+            borderTop: '1px solid rgba(200,169,107,0.16)',
+            borderBottom: '1px solid rgba(200,169,107,0.12)',
+          }}
+        >
+          <div className="cx grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_420px] gap-14 lg:gap-20">
             <ContactForm />
             <ContactInfo />
           </div>
         </div>
 
         {/* Bottom CTA strip */}
-        <div className="cx">
+        <div className="cx py-10 md:py-14">
           <BottomCTA />
         </div>
       </div>

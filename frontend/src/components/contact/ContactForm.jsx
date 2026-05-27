@@ -13,7 +13,7 @@ function GlassInput({ label, type = 'text', value, onChange, placeholder, requir
     <div className="flex flex-col gap-2">
       <label
         className="text-[10px] tracking-[0.26em] uppercase font-semibold transition-colors duration-300"
-        style={{ color: focused ? 'rgba(201,168,76,0.90)' : 'rgba(201,168,76,0.55)' }}
+        style={{ color: focused ? '#9A6127' : 'rgba(122,74,30,0.82)' }}
       >
         {label}{required && <span style={{ color: 'rgba(201,168,76,0.70)', marginLeft: '4px' }}>*</span>}
       </label>
@@ -28,18 +28,16 @@ function GlassInput({ label, type = 'text', value, onChange, placeholder, requir
           className="w-full text-[14px] outline-none font-normal transition-all duration-400"
           style={{
             background: focused
-              ? 'rgba(201,168,76,0.06)'
-              : 'rgba(255,255,255,0.80)',
-            backdropFilter: 'blur(12px)',
-            WebkitBackdropFilter: 'blur(12px)',
-            border: `1px solid ${focused ? 'rgba(201,168,76,0.55)' : 'rgba(201,168,76,0.14)'}`,
-            borderRadius: '2px',
+              ? 'rgba(255,250,242,0.98)'
+              : 'rgba(255,255,255,0.86)',
+            border: `1px solid ${focused ? 'rgba(154,97,39,0.55)' : 'rgba(154,97,39,0.18)'}`,
+            borderRadius: '6px',
             padding: '14px 16px',
-            color: '#3B1F0F',
-            caretColor: 'rgba(201,168,76,0.90)',
+            color: '#2B160D',
+            caretColor: '#9A6127',
             boxShadow: focused
-              ? '0 0 0 1px rgba(201,168,76,0.10), 0 4px 28px rgba(201,168,76,0.12), inset 0 1px 0 rgba(255,255,255,0.04)'
-              : 'inset 0 1px 0 rgba(255,255,255,0.025)',
+              ? '0 0 0 1px rgba(154,97,39,0.10), 0 10px 28px rgba(43,22,13,0.08), inset 0 1px 0 rgba(255,255,255,0.45)'
+              : '0 8px 22px rgba(43,22,13,0.045), inset 0 1px 0 rgba(255,255,255,0.42)',
           }}
         />
         {/* Focus bottom accent line */}
@@ -77,11 +75,11 @@ export default function ContactForm() {
 
   return (
     <div ref={ref}>
-      <p className="text-[10px] tracking-[0.45em] uppercase mb-3" style={{ color: 'rgba(201,168,76,0.75)' }}>Write To Us</p>
-      <h2 className="font-heading text-3xl md:text-[2.6rem] mb-2 leading-tight" style={{ color: '#3B1F0F' }}>
-        Send Us A <span className="italic" style={{ color: 'rgba(226,194,125,0.92)' }}>Message</span>
+      <p className="text-[10px] tracking-[0.45em] uppercase mb-3" style={{ color: '#9A6127' }}>Write To Us</p>
+      <h2 className="font-heading text-3xl md:text-[2.6rem] mb-2 leading-tight" style={{ color: '#2B160D' }}>
+        Send Us A <span className="italic" style={{ color: '#9A6127' }}>Message</span>
       </h2>
-      <p className="text-[13px] leading-relaxed mb-10" style={{ color: 'rgba(59,31,15,0.65)' }}>
+      <p className="text-[13px] leading-relaxed mb-10" style={{ color: '#5C4638' }}>
         Every message is read personally. We reply within 24 hours.
       </p>
 
@@ -107,8 +105,8 @@ export default function ContactForm() {
               <Check size={26} strokeWidth={1.5} className="text-gold-400" />
             </motion.div>
             <div>
-              <h3 className="font-heading text-2xl mb-2" style={{ color: '#3B1F0F' }}>Message Sent ✦</h3>
-              <p className="text-sm font-light max-w-xs" style={{ color: 'rgba(59,31,15,0.65)' }}>
+              <h3 className="font-heading text-2xl mb-2" style={{ color: '#2B160D' }}>Message Sent ✦</h3>
+              <p className="text-sm font-light max-w-xs" style={{ color: '#5C4638' }}>
                 We'll reply within 24 hours. Thank you for reaching out.
               </p>
             </div>
@@ -139,7 +137,7 @@ export default function ContactForm() {
 
             {/* Subject — pill chips */}
             <div className="flex flex-col gap-3">
-              <label className="text-[10px] tracking-[0.26em] uppercase font-semibold" style={{ color: 'rgba(201,168,76,0.55)' }}>Subject</label>
+              <label className="text-[10px] tracking-[0.26em] uppercase font-semibold" style={{ color: 'rgba(122,74,30,0.82)' }}>Subject</label>
               <div className="flex flex-wrap gap-2">
                 {SUBJECTS.map((s) => {
                   const active = form.subject === s
@@ -163,8 +161,8 @@ export default function ContactForm() {
                           : '1px solid rgba(201,168,76,0.18)',
                         background: active
                           ? 'linear-gradient(135deg, rgba(201,168,76,1) 0%, rgba(176,141,87,0.90) 100%)'
-                          : 'rgba(255,255,255,0.80)',
-                        color: active ? '#080503' : 'rgba(59,31,15,0.75)',
+                          : 'rgba(255,255,255,0.86)',
+                        color: active ? '#080503' : '#5C4638',
                         boxShadow: active
                           ? '0 0 20px rgba(201,168,76,0.25), inset 0 1px 0 rgba(255,255,255,0.15)'
                           : 'none',
@@ -174,15 +172,15 @@ export default function ContactForm() {
                       onMouseEnter={e => {
                         if (!active) {
                           e.currentTarget.style.borderColor = 'rgba(201,168,76,0.40)'
-                          e.currentTarget.style.background = 'rgba(201,168,76,0.08)'
-                          e.currentTarget.style.color = 'rgba(255,248,240,0.90)'
+                          e.currentTarget.style.background = 'rgba(255,250,242,0.98)'
+                          e.currentTarget.style.color = '#2B160D'
                         }
                       }}
                       onMouseLeave={e => {
                         if (!active) {
                           e.currentTarget.style.borderColor = 'rgba(201,168,76,0.18)'
-                          e.currentTarget.style.background = 'rgba(255,255,255,0.80)'
-                          e.currentTarget.style.color = 'rgba(59,31,15,0.75)'
+                          e.currentTarget.style.background = 'rgba(255,255,255,0.86)'
+                          e.currentTarget.style.color = '#5C4638'
                         }
                       }}
                     >
@@ -195,7 +193,7 @@ export default function ContactForm() {
 
             {/* Message */}
             <div className="flex flex-col gap-2">
-              <label className="text-[10px] tracking-[0.26em] uppercase font-semibold" style={{ color: 'rgba(201,168,76,0.55)' }}>
+              <label className="text-[10px] tracking-[0.26em] uppercase font-semibold" style={{ color: 'rgba(122,74,30,0.82)' }}>
                 Message <span style={{ color: 'rgba(201,168,76,0.70)' }}>*</span>
               </label>
               <div className="relative">
@@ -206,26 +204,24 @@ export default function ContactForm() {
                   rows={5}
                   className="w-full text-[14px] outline-none font-normal resize-none transition-all duration-400"
                   style={{
-                    background: 'rgba(255,255,255,0.80)',
-                    backdropFilter: 'blur(12px)',
-                    WebkitBackdropFilter: 'blur(12px)',
-                    border: '1px solid rgba(201,168,76,0.14)',
-                    borderRadius: '2px',
+                    background: 'rgba(255,255,255,0.86)',
+                    border: '1px solid rgba(154,97,39,0.18)',
+                    borderRadius: '6px',
                     padding: '14px 16px',
-                    color: '#3B1F0F',
-                    caretColor: 'rgba(201,168,76,0.90)',
-                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.025)',
+                    color: '#2B160D',
+                    caretColor: '#9A6127',
+                    boxShadow: '0 8px 22px rgba(43,22,13,0.045), inset 0 1px 0 rgba(255,255,255,0.42)',
                   }}
                   onFocus={e => {
-                    e.target.style.background = 'rgba(201,168,76,0.06)'
-                    e.target.style.borderColor = 'rgba(201,168,76,0.55)'
-                    e.target.style.boxShadow = '0 0 0 1px rgba(201,168,76,0.10), 0 4px 28px rgba(201,168,76,0.12), inset 0 1px 0 rgba(255,255,255,0.04)'
+                    e.target.style.background = 'rgba(255,250,242,0.98)'
+                    e.target.style.borderColor = 'rgba(154,97,39,0.55)'
+                    e.target.style.boxShadow = '0 0 0 1px rgba(154,97,39,0.10), 0 10px 28px rgba(43,22,13,0.08), inset 0 1px 0 rgba(255,255,255,0.45)'
                   }}
                   onBlur={e => {
-                    e.target.style.background = 'rgba(255,255,255,0.80)'
-                    e.target.style.borderColor = 'rgba(201,168,76,0.14)'
-                    e.target.style.boxShadow = 'inset 0 1px 0 rgba(255,255,255,0.025)'
-                    e.target.style.color = '#3B1F0F'
+                    e.target.style.background = 'rgba(255,255,255,0.86)'
+                    e.target.style.borderColor = 'rgba(154,97,39,0.18)'
+                    e.target.style.boxShadow = '0 8px 22px rgba(43,22,13,0.045), inset 0 1px 0 rgba(255,255,255,0.42)'
+                    e.target.style.color = '#2B160D'
                   }}
                 />
               </div>

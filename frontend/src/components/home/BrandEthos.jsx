@@ -28,21 +28,21 @@ function OrnamentPanel() {
       {/* Outer glow */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,168,76,0.07) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(183,106,47,0.06) 0%, transparent 70%)' }}
       />
 
       {/* Rotating outer ring */}
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
-        className="absolute w-72 h-72 md:w-80 md:h-80 rounded-full border border-dashed border-gold-400/8 pointer-events-none"
+        className="absolute w-72 h-72 md:w-80 md:h-80 rounded-full border border-dashed border-gold-400/14 pointer-events-none"
       />
 
       {/* Counter-rotating inner ring */}
       <motion.div
         animate={{ rotate: -360 }}
         transition={{ duration: 34, repeat: Infinity, ease: 'linear' }}
-        className="absolute w-48 h-48 md:w-56 md:h-56 rounded-full border border-gold-400/6 pointer-events-none"
+        className="absolute w-48 h-48 md:w-56 md:h-56 rounded-full border border-gold-400/12 pointer-events-none"
       />
 
       {/* Central ornament box */}
@@ -135,14 +135,19 @@ export default function BrandEthos() {
     <section className="py-28 md:py-40 luxury-section luxury-section-alt luxury-divider-glow relative overflow-hidden">
 
       {/* Background */}
-      <div className="absolute inset-0 pointer-events-none" style={{ background: 'rgba(250,247,242,0.22)' }} />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle at center, rgba(183,106,47,0.06), transparent 70%), linear-gradient(180deg, rgba(239,230,216,0.42), rgba(241,233,221,0.50))',
+        }}
+      />
       {/* Cinematic glow behind emblem */}
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(201,168,76,0.11) 0%, rgba(95,28,45,0.08) 38%, transparent 68%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(183,106,47,0.08) 0%, rgba(43,22,13,0.055) 38%, transparent 68%)' }}
       />
       {/* Heading glow */}
       <div className="absolute top-1/4 left-0 w-[600px] h-[400px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 0% 50%, rgba(143,71,25,0.12) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(ellipse at 0% 50%, rgba(143,71,25,0.08) 0%, transparent 68%)' }}
       />
 
       {/* Subtle grid texture */}
@@ -165,16 +170,17 @@ export default function BrandEthos() {
             whileInView={{ opacity: 1, letterSpacing: '0.5em' }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: 'easeOut' }}
-            className="text-[10px] uppercase text-gold-400/80"
+            className="text-[10px] uppercase"
+            style={{ color: '#9A6127' }}
           >
             Our Philosophy
           </motion.p>
 
           <div ref={headRef} className="w-full">
-            <h2 className="luxury-heading text-4xl md:text-5xl lg:text-6xl text-ivory" style={{ color: '#3B1F0F' }}>
+            <h2 className="luxury-heading text-4xl md:text-5xl lg:text-6xl" style={{ color: '#2B160D' }}>
               Every Scent
               <br />
-              <span className="italic text-gold-300">Tells A Story</span>
+              <span className="italic" style={{ color: '#9A6127' }}>Tells A Story</span>
             </h2>
           </div>
 
@@ -193,17 +199,17 @@ export default function BrandEthos() {
             viewport={{ once: true, margin: '-80px' }}
             className="flex flex-col gap-6"
           >
-            <motion.p variants={textItem} className="luxury-body max-w-lg" style={{ color: 'rgba(59,31,15,0.90)' }}>
+            <motion.p variants={textItem} className="luxury-body max-w-lg" style={{ color: '#4B3324' }}>
               At M. M. Attarwala, we believe fragrance is deeply personal.
               Every bottle we craft is a conversation between you and
               your senses — blended fresh, just for you.
             </motion.p>
-            <motion.p variants={textItem} className="luxury-body max-w-md" style={{ color: 'rgba(59,31,15,0.80)' }}>
+            <motion.p variants={textItem} className="luxury-body max-w-md" style={{ color: '#5C4638' }}>
               Rooted in the rich tradition of Indian and Arabic attar-making,
               we source the finest raw ingredients and blend them with care.
               No mass production. No shortcuts. No compromise.
             </motion.p>
-            <motion.p variants={textItem} className="text-[10px] tracking-[0.4em] uppercase italic font-heading" style={{ color: 'rgba(201,168,76,0.70)' }}>
+            <motion.p variants={textItem} className="text-[10px] tracking-[0.4em] uppercase italic font-heading" style={{ color: 'rgba(154,97,39,0.86)' }}>
               जनत का एहसास — The Feeling of Paradise
             </motion.p>
           </motion.div>
@@ -216,7 +222,8 @@ export default function BrandEthos() {
                 data-reveal
                 whileHover={{ borderColor: 'rgba(201,168,76,0.45)', y: -2 }}
                 transition={{ duration: 0.25 }}
-                className="flex items-center gap-2 px-5 py-2.5 border border-gold-400/15 group cursor-default"
+                className="flex items-center gap-2 px-5 py-2.5 border border-gold-400/22 group cursor-default"
+                style={{ background: 'rgba(255,255,255,0.24)' }}
               >
                 <motion.span
                   className="text-gold-400/70 group-hover:text-gold-400 transition-colors duration-300 text-xs"
@@ -225,7 +232,7 @@ export default function BrandEthos() {
                 >
                   {icon}
                 </motion.span>
-                <span className="text-[10px] tracking-[0.25em] uppercase text-ivory/80 group-hover:text-ivory transition-colors duration-300 whitespace-nowrap" style={{ color: 'rgba(59,31,15,0.65)' }}>
+                <span className="text-[10px] tracking-[0.25em] uppercase transition-colors duration-300 whitespace-nowrap" style={{ color: '#4B3324' }}>
                   {label}
                 </span>
               </motion.div>

@@ -15,10 +15,10 @@ export default function Step4Name({ selections, update }) {
     <div className="flex flex-col gap-10">
       <div>
         <p className="editorial-label mb-2">Step 4 of 5</p>
-        <h2 className="font-heading text-3xl md:text-4xl text-ivory mb-2">
-          Name Your <span className="italic text-gold-300">Fragrance</span>
+        <h2 className="font-heading text-3xl md:text-4xl text-brown mb-2">
+          Name Your <span className="italic" style={{ color: '#9A6127' }}>Fragrance</span>
         </h2>
-        <p className="text-ivory/84 text-[15px] font-normal leading-[1.85]">
+        <p className="text-[15px] font-normal leading-[1.85]" style={{ color: '#5C4638' }}>
           Give your creation an identity. Make it yours.
         </p>
       </div>
@@ -56,15 +56,15 @@ export default function Step4Name({ selections, update }) {
             className={[
               'w-full bg-transparent text-center font-heading text-2xl md:text-3xl',
               'outline-none border-b pb-3 transition-colors duration-400',
-              'placeholder:text-ivory/15',
+              'placeholder:text-brown/25',
             ].join(' ')}
             style={{
-              color: name ? accentColor : 'rgba(236,230,220,0.78)',
+              color: name ? accentColor : '#5C4638',
               borderColor: focused
                 ? accentColor
                 : name
                 ? `${accentColor}40`
-                : 'rgba(245,240,232,0.1)',
+                : 'rgba(43,22,13,0.16)',
               caretColor: accentColor,
             }}
           />
@@ -74,7 +74,7 @@ export default function Step4Name({ selections, update }) {
             <span />
             <span
               className="text-[9px] tracking-[0.25em] transition-colors duration-300"
-              style={{ color: remaining < 5 ? '#E57373' : 'rgba(236,230,220,0.58)' }}
+              style={{ color: remaining < 5 ? '#B94A3C' : 'rgba(92,70,56,0.72)' }}
             >
               {remaining}
             </span>
@@ -91,7 +91,7 @@ export default function Step4Name({ selections, update }) {
               exit={{ opacity: 0, y: -10 }}
               className="text-center"
             >
-              <p className="text-[10px] tracking-[0.2em] uppercase text-ivory/62 font-medium mb-2">Your fragrance</p>
+              <p className="text-[10px] tracking-[0.2em] uppercase font-medium mb-2" style={{ color: 'rgba(92,70,56,0.72)' }}>Your fragrance</p>
               <p
                 className="font-heading italic text-4xl"
                 style={{ color: accentColor, opacity: 0.7 }}
@@ -99,7 +99,7 @@ export default function Step4Name({ selections, update }) {
                 {name}
               </p>
               {fam && (
-                <p className="text-[10px] tracking-[0.2em] uppercase text-ivory/58 mt-1">
+                <p className="text-[10px] tracking-[0.2em] uppercase mt-1" style={{ color: 'rgba(92,70,56,0.70)' }}>
                   {fam.label} · M. M. Attarwala
                 </p>
               )}
@@ -110,7 +110,8 @@ export default function Step4Name({ selections, update }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="text-[10px] tracking-[0.2em] uppercase text-ivory/58 text-center"
+              className="text-[10px] tracking-[0.2em] uppercase text-center"
+              style={{ color: 'rgba(92,70,56,0.70)' }}
             >
               What will you call it?
             </motion.p>
@@ -122,7 +123,8 @@ export default function Step4Name({ selections, update }) {
       <div className="text-center">
         <button
           onClick={() => update({ name: '' })}
-          className="text-[10px] tracking-[0.2em] uppercase text-ivory/58 hover:text-ivory/78 transition-colors duration-300 underline underline-offset-4"
+          className="text-[10px] tracking-[0.2em] uppercase transition-colors duration-300 underline underline-offset-4"
+          style={{ color: 'rgba(92,70,56,0.72)' }}
         >
           Skip — we'll name it together
         </button>

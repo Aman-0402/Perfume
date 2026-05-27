@@ -364,7 +364,7 @@ export default function CollectionCard({ product, index, featured = false }) {
         <div className="flex items-start justify-between gap-2">
           <div>
             <h3 className={`font-heading ${featured ? 'text-lg sm:text-[1.7rem]' : 'text-base sm:text-[1.45rem]'} transition-colors duration-400 leading-tight`}
-              style={{ color: isActive ? 'rgba(201,168,76,1)' : '#3B1F0F' }}>
+              style={{ color: isActive ? '#2B160D' : '#2B160D' }}>
               {name}
             </h3>
           </div>
@@ -380,7 +380,7 @@ export default function CollectionCard({ product, index, featured = false }) {
 
         {/* Description */}
         <p className="font-normal leading-[1.75]"
-          style={{ fontSize: '0.875rem', color: isActive ? 'rgba(59,31,15,0.90)' : 'rgba(59,31,15,0.72)', transition: 'color 0.4s' }}>
+          style={{ fontSize: '0.875rem', color: isActive ? '#4B3324' : '#5C4638', transition: 'color 0.4s' }}>
           {desc}
         </p>
 
@@ -392,8 +392,8 @@ export default function CollectionCard({ product, index, featured = false }) {
               className="text-[9px] tracking-[0.18em] uppercase px-2.5 py-1.5 border transition-all duration-400"
               style={{
                 borderColor: isActive ? `${accentColor}45` : `${accentColor}28`,
-                color:       isActive ? `${accentColor}` : `${accentColor}AA`,
-                background:  isActive ? `${accentColor}05` : 'transparent',
+                color:       isActive ? '#4B3324' : '#6D5442',
+                background:  isActive ? `${accentColor}06` : 'transparent',
               }}
             >
               {note}
@@ -409,7 +409,7 @@ export default function CollectionCard({ product, index, featured = false }) {
           {/* Keyword label */}
           {!isComingSoon && (
             <span className="text-[9px] tracking-[0.22em] uppercase font-semibold"
-              style={{ color: isActive ? `${accentColor}E6` : `${accentColor}80`, transition: 'color 0.4s' }}>
+              style={{ color: isActive ? '#7A4A1E' : '#6D5442', transition: 'color 0.4s' }}>
               Handcrafted · Pure Essence
             </span>
           )}

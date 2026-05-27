@@ -21,24 +21,24 @@ const FAMILY_ICONS = {
 /* Per-family atmospheric backgrounds — each card subtly different even inactive */
 const CARD_BG = {
   oud:    'linear-gradient(160deg, rgba(22,10,3,0.94) 0%, rgba(28,13,4,0.90) 100%)',
-  floral: 'linear-gradient(160deg, rgba(22,8,12,0.94) 0%, rgba(28,10,16,0.90) 100%)',
+  floral: 'linear-gradient(160deg, rgba(35,12,17,0.94) 0%, rgba(74,24,34,0.90) 100%)',
   musk:   'linear-gradient(160deg, rgba(13,12,20,0.94) 0%, rgba(17,15,25,0.90) 100%)',
-  fresh:  'linear-gradient(160deg, rgba(8,18,11,0.94) 0%, rgba(10,22,14,0.90) 100%)',
+  fresh:  'linear-gradient(160deg, rgba(15,46,37,0.94) 0%, rgba(26,67,55,0.90) 100%)',
 }
 
 const CARD_HOVER_BG = {
   oud:    'linear-gradient(160deg, rgba(36,17,5,0.97) 0%, rgba(42,20,6,0.95) 100%)',
-  floral: 'linear-gradient(160deg, rgba(36,12,20,0.97) 0%, rgba(42,15,25,0.95) 100%)',
+  floral: 'linear-gradient(160deg, rgba(45,15,22,0.97) 0%, rgba(90,31,42,0.95) 100%)',
   musk:   'linear-gradient(160deg, rgba(18,16,30,0.97) 0%, rgba(22,20,36,0.95) 100%)',
-  fresh:  'linear-gradient(160deg, rgba(12,26,16,0.97) 0%, rgba(15,32,20,0.95) 100%)',
+  fresh:  'linear-gradient(160deg, rgba(15,46,37,0.97) 0%, rgba(26,67,55,0.95) 100%)',
 }
 
 /* Subtle corner vignette color that hints at family character even when inactive */
 const CARD_VIGNETTE = {
   oud:    'rgba(180,90,15,0.09)',
-  floral: 'rgba(200,80,120,0.08)',
+  floral: 'rgba(120,45,55,0.08)',
   musk:   'rgba(180,165,220,0.07)',
-  fresh:  'rgba(50,150,90,0.08)',
+  fresh:  'rgba(45,120,95,0.07)',
 }
 
 export default function Step1Family({ selections, update }) {
@@ -53,11 +53,11 @@ export default function Step1Family({ selections, update }) {
         </p>
         <h2
           className="font-heading text-2xl md:text-3xl mb-2"
-          style={{ color: 'rgba(245,240,232,0.90)', fontWeight: 300 }}
+          style={{ color: '#2B160D', fontWeight: 300 }}
         >
-          Choose Your <span className="italic" style={{ color: 'rgba(201,168,76,0.90)' }}>Family</span>
+          Choose Your <span className="italic" style={{ color: '#9A6127' }}>Family</span>
         </h2>
-        <p className="text-[15px] font-normal leading-[1.85]" style={{ color: 'rgba(236,230,220,0.86)' }}>
+        <p className="text-[15px] font-normal leading-[1.85]" style={{ color: '#5C4638' }}>
           The fragrance family sets the soul of your blend.
         </p>
       </div>

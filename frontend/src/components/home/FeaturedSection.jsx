@@ -118,17 +118,17 @@ function FragranceCard({ fragrance, index, activeId, onTap }) {
       className={[
         'group relative flex flex-col border transition-colors duration-700 cursor-pointer rounded-xl z-0 hover:z-10',
         featured
-          ? 'border-gold-400/15 hover:border-gold-400/35'
-          : 'border-gold-400/8 hover:border-gold-400/18',
+          ? 'border-gold-400/20 hover:border-gold-400/42'
+          : 'border-gold-400/12 hover:border-gold-400/28',
       ].join(' ')}
       style={{
         background: featured
-          ? 'linear-gradient(155deg, rgba(248,244,238,0.96) 0%, rgba(239,230,216,0.96) 58%, rgba(248,244,238,0.90) 100%)'
-          : 'linear-gradient(155deg, rgba(248,244,238,0.94) 0%, rgba(239,230,216,0.94) 58%, rgba(248,244,238,0.88) 100%)',
+          ? 'linear-gradient(155deg, rgba(250,246,239,0.98) 0%, rgba(235,224,209,0.98) 58%, rgba(246,238,226,0.94) 100%)'
+          : 'linear-gradient(155deg, rgba(249,244,236,0.98) 0%, rgba(235,224,209,0.96) 58%, rgba(246,238,226,0.92) 100%)',
         perspective: '1400px',
         boxShadow: featured
-          ? '0 30px 90px rgba(40,20,10,0.14), 0 0 70px rgba(200,169,107,0.10), inset 0 1px 0 rgba(255,255,255,0.70)'
-          : '0 24px 70px rgba(40,20,10,0.10), 0 2px 0 rgba(200,169,107,0.08), inset 0 1px 0 rgba(255,255,255,0.60)',
+          ? '0 34px 95px rgba(43,22,13,0.18), 0 0 48px rgba(183,106,47,0.08), inset 0 1px 0 rgba(255,255,255,0.55)'
+          : '0 26px 74px rgba(43,22,13,0.13), 0 2px 0 rgba(154,97,39,0.08), inset 0 1px 0 rgba(255,255,255,0.46)',
       }}
     >
 
@@ -200,17 +200,17 @@ function FragranceCard({ fragrance, index, activeId, onTap }) {
       {/* ── CARD BODY: flat, no tilt, border-aligned ───────────────── */}
       <div className="p-7 flex flex-col gap-4 flex-1 pb-10">
         <div className="flex items-center justify-between gap-3">
-          <h3 className="luxury-card-title text-[1.75rem] md:text-[2rem] group-hover:text-gold-300 transition-colors duration-300" style={{ color: '#3B1F0F' }}>
+          <h3 className="luxury-card-title text-[1.75rem] md:text-[2rem] transition-colors duration-300" style={{ color: '#2B160D' }}>
             {name}
           </h3>
           <ArrowRight size={14} strokeWidth={1} className="text-gold-400/60 group-hover:text-gold-400 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
         </div>
 
-        <p className="luxury-body" style={{ maxWidth: '92%', color: 'rgba(59,31,15,0.75)' }}>{desc}</p>
+        <p className="luxury-body" style={{ maxWidth: '92%', color: '#5C4638' }}>{desc}</p>
 
         <div className="flex flex-wrap gap-2 mt-auto pt-3">
           {notes.map((note) => (
-            <span key={note} className="text-[10px] tracking-[0.18em] uppercase px-3 py-1.5 border text-gold-300/90 group-hover:text-gold-300 transition-all duration-300 rounded-full" style={{ borderColor: `${accentColor}38`, background: `${accentColor}08` }}>
+            <span key={note} className="text-[10px] tracking-[0.18em] uppercase px-3 py-1.5 border transition-all duration-300 rounded-full" style={{ borderColor: `${accentColor}38`, background: `${accentColor}08`, color: '#7B5A38' }}>
               {note}
             </span>
           ))}
@@ -232,19 +232,19 @@ export default function FeaturedSection() {
   const ctaRef     = useGSAPReveal({ from: { opacity: 0, y: 24 }, to: { opacity: 1, y: 0 }, duration: 0.8, start: 'top 92%' })
 
   return (
-    <section className="py-24 md:py-32 luxury-section luxury-divider-glow relative">
+    <section className="py-24 md:py-32 luxury-section luxury-divider-glow product-catalog-section relative">
 
       {/* Atmospheric glow zone behind heading */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(183,106,47,0.055) 0%, transparent 68%)' }}
       />
       {/* Warm amber glow — bottom left */}
       <div className="absolute bottom-0 left-0 w-[500px] h-[400px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 0% 100%, rgba(201,168,76,0.06) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(ellipse at 0% 100%, rgba(183,106,47,0.055) 0%, transparent 68%)' }}
       />
       {/* Cool right accent */}
       <div className="absolute top-1/2 right-0 w-[400px] h-[600px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 100% 50%, rgba(61,107,94,0.06) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse at 100% 50%, rgba(43,22,13,0.035) 0%, transparent 70%)' }}
       />
 
     <div className="cx relative z-10">
@@ -252,8 +252,8 @@ export default function FeaturedSection() {
       {/* Header */}
       <div ref={headingRef} className="w-full text-center mb-20">
         <p className="editorial-label mb-8">Our Craft</p>
-        <h2 className="luxury-heading text-4xl sm:text-5xl md:text-7xl mb-8 text-center" style={{ color: '#3B1F0F' }}>Signature Scents</h2>
-        <p className="font-heading italic text-xl md:text-2xl max-w-md mx-auto text-center leading-relaxed" style={{ color: 'rgba(59,31,15,0.75)' }}>
+        <h2 className="luxury-heading text-4xl sm:text-5xl md:text-7xl mb-8 text-center" style={{ color: '#2B160D' }}>Signature <span className="italic" style={{ color: '#9A6127' }}>Scents</span></h2>
+        <p className="font-heading italic text-xl md:text-2xl max-w-md mx-auto text-center leading-relaxed" style={{ color: '#5C4638' }}>
           Each fragrance tells a story, each drop holds a world.
         </p>
       </div>

@@ -15,13 +15,13 @@ export default function StepIndicator({ currentStep, isSticky }) {
       className="sticky z-30 transition-all duration-500"
       style={{
         top: '76px',
-        background: isSticky ? 'rgba(4,3,2,0.94)' : 'transparent',
-        backdropFilter: isSticky ? 'blur(14px)' : 'none',
-        WebkitBackdropFilter: isSticky ? 'blur(14px)' : 'none',
+        background: isSticky ? 'rgba(27,18,13,0.88)' : 'rgba(241,231,218,0.72)',
+        backdropFilter: isSticky ? 'blur(8px)' : 'blur(2px)',
+        WebkitBackdropFilter: isSticky ? 'blur(8px)' : 'blur(2px)',
         borderBottom: isSticky
-          ? '1px solid rgba(176,141,87,0.10)'
-          : '1px solid rgba(176,141,87,0.06)',
-        boxShadow: isSticky ? '0 4px 40px rgba(0,0,0,0.7)' : 'none',
+          ? '1px solid rgba(200,169,107,0.22)'
+          : '1px solid rgba(200,169,107,0.12)',
+        boxShadow: isSticky ? '0 10px 34px rgba(43,22,13,0.24)' : 'none',
       }}
     >
       <div className="cx">
@@ -30,7 +30,7 @@ export default function StepIndicator({ currentStep, isSticky }) {
           {/* Connecting track base */}
           <div
             className="absolute left-5 right-5 h-px"
-            style={{ top: '50%', transform: 'translateY(-50%)', background: 'rgba(176,141,87,0.08)', zIndex: 0 }}
+              style={{ top: '50%', transform: 'translateY(-50%)', background: 'rgba(176,141,87,0.14)', zIndex: 0 }}
           />
 
           {/* Filled progress track */}
@@ -83,7 +83,9 @@ export default function StepIndicator({ currentStep, isSticky }) {
                         ? '#C9A84C'
                         : isActive
                         ? 'rgba(176,141,87,0.12)'
-                        : 'rgba(5,4,3,0.8)',
+                        : isSticky
+                        ? 'rgba(5,4,3,0.78)'
+                        : 'rgba(43,22,13,0.88)',
                       borderColor: isComplete || isActive
                         ? 'rgba(176,141,87,0.75)'
                         : 'rgba(236,230,220,0.46)',
@@ -100,7 +102,7 @@ export default function StepIndicator({ currentStep, isSticky }) {
                       <span
                         className="text-[12px] font-medium tabular-nums"
                         style={{
-                          color: isActive ? 'rgba(226,194,125,0.96)' : 'rgba(236,230,220,0.58)',
+                        color: isActive ? 'rgba(226,194,125,0.96)' : 'rgba(236,230,220,0.58)',
                         }}
                       >
                         {n}

@@ -36,9 +36,9 @@ export const FAMILIES = [
     label: 'Floral',
     arabicLabel: 'زهور',
     desc: 'Blooming petals, velvety and romantic. Nature at its finest.',
-    gradient: 'linear-gradient(135deg, #1f0a10 0%, #3a1020 100%)',
+    gradient: 'linear-gradient(135deg, #4A1822 0%, #5A1F2A 100%)',
     accentColor: '#E2C27D',
-    glowColor: 'rgba(226,194,125,0.12)',
+    glowColor: 'rgba(183,106,47,0.10)',
   },
   {
     id: 'musk',
@@ -54,9 +54,9 @@ export const FAMILIES = [
     label: 'Fresh',
     arabicLabel: 'نضارة',
     desc: 'Bright, airy, invigorating. Morning light in a bottle.',
-    gradient: 'linear-gradient(135deg, #0a120a 0%, #0f1f10 100%)',
+    gradient: 'linear-gradient(135deg, #0F2E25 0%, #1A4337 100%)',
     accentColor: '#C9A84C',
-    glowColor: 'rgba(201,168,76,0.10)',
+    glowColor: 'rgba(183,106,47,0.09)',
   },
 ]
 

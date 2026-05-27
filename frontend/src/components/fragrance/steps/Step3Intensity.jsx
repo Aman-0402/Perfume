@@ -18,10 +18,10 @@ export default function Step3Intensity({ selections, update }) {
           Step 3 of 5
         </p>
         <h2 className="font-heading text-3xl md:text-4xl mb-2"
-          style={{ color: 'rgba(245,240,232,0.92)', fontWeight: 300 }}>
-          Set the <span className="italic" style={{ color: 'rgba(201,168,76,0.90)' }}>Intensity</span>
+          style={{ color: '#2B160D', fontWeight: 300 }}>
+          Set the <span className="italic" style={{ color: '#9A6127' }}>Intensity</span>
         </h2>
-        <p className="text-[15px] font-normal leading-[1.85]" style={{ color: 'rgba(236,230,220,0.86)' }}>
+        <p className="text-[15px] font-normal leading-[1.85]" style={{ color: '#5C4638' }}>
           How loud should your fragrance speak?
         </p>
       </div>
@@ -59,7 +59,7 @@ export default function Step3Intensity({ selections, update }) {
                   key={i}
                   animate={{
                     width: i < intensity ? '18px' : '6px',
-                    background: i < intensity ? accentColor : 'rgba(245,240,232,0.08)',
+                    background: i < intensity ? accentColor : 'rgba(43,22,13,0.14)',
                     opacity: i < intensity ? 0.7 + (i / 5) * 0.3 : 1,
                   }}
                   transition={{ duration: 0.4, delay: i * 0.04 }}
@@ -69,7 +69,7 @@ export default function Step3Intensity({ selections, update }) {
             </div>
 
             <p className="text-[12px] font-normal leading-relaxed max-w-[280px] text-center mt-1"
-              style={{ color: 'rgba(255,252,245,0.72)' }}>
+              style={{ color: '#5C4638' }}>
               {level?.desc}
             </p>
           </motion.div>
@@ -135,7 +135,7 @@ export default function Step3Intensity({ selections, update }) {
               <motion.div
                 animate={{
                   height: value <= intensity ? '14px' : '5px',
-                  background: value <= intensity ? accentColor : 'rgba(245,240,232,0.07)',
+                  background: value <= intensity ? accentColor : 'rgba(43,22,13,0.16)',
                 }}
                 transition={{ duration: 0.35 }}
                 style={{ width: '3px', borderRadius: '2px' }}
@@ -150,7 +150,7 @@ export default function Step3Intensity({ selections, update }) {
                     ? accentColor
                     : value < intensity
                     ? `${accentColor}55`
-                    : 'rgba(236,230,220,0.76)',
+                    : 'rgba(92,70,56,0.76)',
                   opacity: value === intensity ? 1 : 0.65,
                 }}
               >
@@ -181,7 +181,7 @@ export default function Step3Intensity({ selections, update }) {
               Sillage
             </p>
             <p className="text-[13px] font-normal leading-[1.75]"
-              style={{ color: 'rgba(255,252,245,0.72)' }}>
+              style={{ color: '#5C4638' }}>
               {intensity <= 2
                 ? 'Intimate trail — only noticed when close. Perfect for personal wear and office.'
                 : intensity === 3

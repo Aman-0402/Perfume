@@ -48,18 +48,23 @@ function ArabesqueDivider() {
 export default function FragranceBuilderHero() {
   return (
     <section
-      className="relative flex items-center justify-center overflow-hidden luxury-section"
-      style={{ minHeight: '56vh', paddingTop: '90px' }}
+      className="relative flex items-center justify-center overflow-hidden"
+      style={{
+        minHeight: '56vh',
+        paddingTop: '90px',
+        background:
+          'radial-gradient(ellipse 70% 58% at 50% 42%, rgba(183,106,47,0.10) 0%, transparent 68%), linear-gradient(180deg, #F1E7DA 0%, #EFE2D2 100%)',
+      }}
     >
       {/* Deep cinematic glow layers */}
       <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 80% 70% at 50% 60%, rgba(156,88,28,0.16) 0%, rgba(84,25,42,0.16) 45%, transparent 75%)',
+        background: 'radial-gradient(ellipse 80% 70% at 50% 60%, rgba(156,88,28,0.07) 0%, rgba(43,22,13,0.055) 45%, transparent 75%)',
       }} />
       <div className="absolute top-0 left-1/3 w-[600px] h-[400px] pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 80% 80% at 33% 20%, rgba(80,40,10,0.12) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse 80% 80% at 33% 20%, rgba(80,40,10,0.045) 0%, transparent 70%)',
       }} />
       <div className="absolute bottom-0 right-1/3 w-[500px] h-[300px] pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 80% 80% at 67% 80%, rgba(60,30,8,0.10) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse 80% 80% at 67% 80%, rgba(60,30,8,0.04) 0%, transparent 70%)',
       }} />
 
       {/* Gold dust particles */}
@@ -116,12 +121,12 @@ export default function FragranceBuilderHero() {
         {/* Headline */}
         <motion.div variants={item} className="overflow-hidden mb-3">
           <h1 className="font-heading leading-none" style={{ fontWeight: 300 }}>
-            <span className="block text-5xl md:text-7xl lg:text-[5.5rem]" style={{ color: 'rgba(245,241,234,0.98)' }}>
+            <span className="block text-5xl md:text-7xl lg:text-[5.5rem]" style={{ color: '#2B160D' }}>
               Craft Your
             </span>
             <span
-              className="block text-5xl md:text-7xl lg:text-[5.5rem] italic text-gold-gradient"
-              style={{ fontWeight: 400, lineHeight: 0.92 }}
+              className="block text-5xl md:text-7xl lg:text-[5.5rem] italic"
+              style={{ fontWeight: 400, lineHeight: 0.92, color: '#C8A96B' }}
             >
               Signature
             </span>
@@ -151,16 +156,19 @@ export default function FragranceBuilderHero() {
         <motion.p
           variants={item}
           className="font-heading italic text-lg md:text-xl"
-          style={{ color: 'rgba(255,252,245,0.82)', letterSpacing: '0.01em' }}
+          style={{ color: '#5C4638', letterSpacing: '0.01em' }}
         >
           Tell us your vision. We'll blend it to life.
         </motion.p>
       </motion.div>
 
-      {/* Bottom fade */}
+      {/* Bottom divider */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none"
-        style={{ background: 'linear-gradient(to top, #100908, transparent)' }}
+        className="absolute bottom-0 left-0 right-0 h-px pointer-events-none"
+        style={{
+          background: 'linear-gradient(90deg, transparent, rgba(200,169,107,0.22), transparent)',
+          boxShadow: '0 0 30px rgba(183,106,47,0.08)',
+        }}
       />
       <ArabesqueDivider />
     </section>

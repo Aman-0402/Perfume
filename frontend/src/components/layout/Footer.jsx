@@ -44,19 +44,27 @@ export default function Footer() {
   return (
     <>
       {/* Cinematic transition into footer */}
-      <div className="h-32 pointer-events-none" style={{
-        background: 'linear-gradient(to bottom, transparent 0%, rgba(20,11,9,0.66) 55%, rgba(10,6,6,0.96) 100%)',
+      <div className="h-24 pointer-events-none" style={{
+        background: 'linear-gradient(to bottom, rgba(239,230,216,0) 0%, rgba(78,45,28,0.22) 58%, rgba(36,21,14,0.76) 100%)',
       }} />
 
-      <footer className="relative overflow-hidden luxury-section luxury-section-alt luxury-divider-glow" style={{ background: '#050302' }}>
+      <footer
+        className="relative overflow-hidden luxury-section luxury-section-alt luxury-divider-glow"
+        style={{
+          background: 'linear-gradient(180deg, #2B1A11 0%, #1E120D 54%, #160D09 100%)',
+        }}
+      >
 
         {/* Atmospheric glow */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px]"
-            style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(180,104,32,0.13) 0%, transparent 65%)' }}
+            style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(200,128,55,0.18) 0%, transparent 65%)' }}
           />
           <div className="absolute bottom-0 left-0 w-[500px] h-[300px]"
-            style={{ background: 'radial-gradient(ellipse at 0% 100%, rgba(85,24,42,0.11) 0%, transparent 65%)' }}
+            style={{ background: 'radial-gradient(ellipse at 0% 100%, rgba(122,58,25,0.13) 0%, transparent 65%)' }}
+          />
+          <div className="absolute inset-0"
+            style={{ background: 'linear-gradient(90deg, rgba(255,248,238,0.035), transparent 28%, transparent 72%, rgba(255,248,238,0.025))' }}
           />
         </div>
 
@@ -74,7 +82,7 @@ export default function Footer() {
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
           <span
             className="font-heading font-light select-none whitespace-nowrap"
-            style={{ fontSize: 'clamp(56px,9vw,110px)', letterSpacing: '0.5em', color: 'rgba(255,248,240,1)', opacity: 0.055 }}
+            style={{ fontSize: 'clamp(56px,9vw,110px)', letterSpacing: '0.5em', color: 'rgba(255,248,240,1)', opacity: 0.075 }}
           >
             M. M. ATTARWALA
           </span>
@@ -274,7 +282,7 @@ export default function Footer() {
 
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
-          style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.5))' }}
+          style={{ background: 'linear-gradient(to bottom, transparent, rgba(22,13,9,0.42))' }}
         />
       </footer>
     </>

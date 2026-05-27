@@ -167,7 +167,7 @@ export default function ContactHero() {
 
       {/* Bottom fade into page */}
       <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-        style={{ background: 'linear-gradient(to top, #090605, rgba(9,6,5,0.80), transparent)' }}
+        style={{ background: 'linear-gradient(to top, #F1E7DA, rgba(241,231,218,0.72), transparent)' }}
       />
     </section>
   )

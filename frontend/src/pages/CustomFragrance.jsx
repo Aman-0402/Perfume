@@ -21,9 +21,9 @@ const TOTAL_STEPS = 5
 */
 const FAMILY_ATM = {
   oud:    { glow: '145,72,18',  particle: '201,168,76' },
-  floral: { glow: '152,78,20',  particle: '201,168,76' },
+  floral: { glow: '95,31,42',   particle: '201,168,76' },
   musk:   { glow: '138,68,16',  particle: '201,168,76' },
-  fresh:  { glow: '130,65,15',  particle: '201,168,76' },
+  fresh:  { glow: '26,67,55',   particle: '201,168,76' },
 }
 const DEFAULT_ATM = { glow: '118,58,13', particle: '176,141,87' }
 
@@ -122,7 +122,11 @@ export default function CustomFragrance() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen relative luxury-page"
+      className="min-h-screen relative"
+      style={{
+        background:
+          'radial-gradient(ellipse 78% 52% at 24% 24%, rgba(183,106,47,0.055) 0%, transparent 68%), linear-gradient(180deg, #F1E7DA 0%, #EFE2D2 100%)',
+      }}
     >
       {/* ── Warm amber atmospheric glow — single soft centered layer ── */}
       <AnimatePresence>
@@ -137,11 +141,11 @@ export default function CustomFragrance() {
         >
           <div style={{
             position: 'absolute', inset: 0,
-            background: `radial-gradient(ellipse 85% 70% at 25% 50%, rgba(${atm.glow},${glowOpacity + 0.035}) 0%, transparent 70%)`,
+            background: `radial-gradient(ellipse 85% 70% at 25% 50%, rgba(${atm.glow},${glowOpacity}) 0%, transparent 70%)`,
           }} />
           <div style={{
             position: 'absolute', inset: 0,
-            background: `radial-gradient(ellipse 60% 55% at 78% 42%, rgba(90,24,44,${glowOpacity * 0.72 + 0.035}) 0%, transparent 70%)`,
+            background: `radial-gradient(ellipse 60% 55% at 78% 42%, rgba(43,22,13,${glowOpacity * 0.5}) 0%, transparent 70%)`,
           }} />
         </motion.div>
       </AnimatePresence>
@@ -171,7 +175,17 @@ export default function CustomFragrance() {
         <StepIndicator currentStep={step} isSticky={tabsSticky} />
 
         {/* Builder area */}
-        <div className="cx py-14 md:py-20">
+        <div
+          className="relative py-14 md:py-20"
+          style={{
+            background:
+              'linear-gradient(180deg, #F1E7DA 0%, #EFE2D2 100%)',
+            borderTop: '1px solid rgba(200,169,107,0.14)',
+            borderBottom: '1px solid rgba(200,169,107,0.14)',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(43,22,13,0.035)',
+          }}
+        >
+          <div className="cx">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_320px] gap-12 lg:gap-14 items-start">
 
             {/* ── Left ── */}
@@ -195,17 +209,17 @@ export default function CustomFragrance() {
 
               {/* Navigation */}
               {step < TOTAL_STEPS && (
-                <div className="flex items-center gap-4 mt-12">
+                <div className="flex items-center gap-4 mt-16 md:mt-20">
                   {step > 1 && (
                     <button
                       onClick={goBack}
                       className="flex items-center gap-2 transition-colors duration-300"
                       style={{
-                        fontSize: '9px', letterSpacing: '0.3em', textTransform: 'uppercase',
-                        color: 'rgba(245,240,232,0.22)', padding: '15px 0',
+                      fontSize: '9px', letterSpacing: '0.3em', textTransform: 'uppercase',
+                        color: 'rgba(43,22,13,0.42)', padding: '15px 0',
                       }}
-                      onMouseEnter={e => e.currentTarget.style.color = 'rgba(245,240,232,0.50)'}
-                      onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,240,232,0.22)'}
+                      onMouseEnter={e => e.currentTarget.style.color = 'rgba(43,22,13,0.70)'}
+                      onMouseLeave={e => e.currentTarget.style.color = 'rgba(43,22,13,0.42)'}
                     >
                       <ArrowLeft size={11} strokeWidth={1.5} />
                       Back
@@ -225,15 +239,17 @@ export default function CustomFragrance() {
                     }}
                     className="ml-auto relative overflow-hidden flex items-center gap-3 transition-all duration-500"
                     style={{
-                      padding: '14px 44px',
-                      fontSize: '10px', letterSpacing: '0.38em', textTransform: 'uppercase', fontWeight: 300,
-                      backdropFilter: canGo ? 'blur(8px)' : 'none',
-                      WebkitBackdropFilter: canGo ? 'blur(8px)' : 'none',
-                      background: canGo ? 'rgba(176,141,87,0.09)' : 'rgba(176,141,87,0.03)',
-                      border: `1px solid ${canGo ? 'rgba(176,141,87,0.45)' : 'rgba(176,141,87,0.09)'}`,
-                      color: canGo ? 'rgba(201,168,76,0.95)' : 'rgba(245,240,232,0.14)',
+                      padding: '15px 44px',
+                      fontSize: '10px', letterSpacing: '0.34em', textTransform: 'uppercase', fontWeight: 600,
+                      background: canGo
+                        ? 'linear-gradient(135deg, rgba(200,169,107,0.98) 0%, rgba(154,97,39,0.92) 100%)'
+                        : 'rgba(176,141,87,0.08)',
+                      border: `1px solid ${canGo ? 'rgba(154,97,39,0.55)' : 'rgba(176,141,87,0.16)'}`,
+                      color: canGo ? '#160D09' : 'rgba(43,22,13,0.30)',
                       cursor: canGo ? 'pointer' : 'not-allowed',
-                      boxShadow: canGo ? '0 0 24px rgba(176,141,87,0.10), inset 0 0 12px rgba(176,141,87,0.04)' : 'none',
+                      boxShadow: canGo
+                        ? '0 14px 34px rgba(43,22,13,0.16), 0 0 28px rgba(183,106,47,0.12), inset 0 1px 0 rgba(255,248,238,0.25)'
+                        : 'none',
                     }}
                   >
                     <motion.div
@@ -256,9 +272,9 @@ export default function CustomFragrance() {
                 <button
                   onClick={goBack}
                   className="flex items-center gap-2 mt-8 transition-colors duration-300"
-                  style={{ fontSize: '9px', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(245,240,232,0.18)' }}
-                  onMouseEnter={e => e.currentTarget.style.color = 'rgba(245,240,232,0.42)'}
-                  onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,240,232,0.18)'}
+                  style={{ fontSize: '9px', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(43,22,13,0.42)' }}
+                  onMouseEnter={e => e.currentTarget.style.color = 'rgba(43,22,13,0.70)'}
+                  onMouseLeave={e => e.currentTarget.style.color = 'rgba(43,22,13,0.42)'}
                 >
                   <ArrowLeft size={11} strokeWidth={1.5} />
                   Edit Selections
@@ -273,14 +289,16 @@ export default function CustomFragrance() {
                   className="relative overflow-hidden"
                   style={{
                     border: '1px solid rgba(176,141,87,0.07)',
-                    background: 'linear-gradient(155deg, rgba(28,16,12,0.88), rgba(11,8,7,0.90) 56%, rgba(32,12,19,0.78))',
-                    backdropFilter: 'blur(8px)',
-                    WebkitBackdropFilter: 'blur(8px)',
+                    borderRadius: '12px',
+                    background: 'linear-gradient(155deg, rgba(43,25,17,0.94), rgba(20,13,10,0.94) 56%, rgba(54,30,20,0.86))',
+                    backdropFilter: 'blur(5px)',
+                    WebkitBackdropFilter: 'blur(5px)',
+                    boxShadow: '0 0 40px rgba(183,106,47,0.10), 0 24px 70px rgba(43,22,13,0.20), inset 0 1px 0 rgba(255,248,238,0.09)',
                   }}
                   animate={{
                     boxShadow: previewFam
-                      ? `0 0 50px ${previewFam.glowColor}, 0 0 100px ${previewFam.glowColor}`
-                      : '0 0 0 transparent',
+                      ? `0 0 40px rgba(183,106,47,0.10), 0 24px 70px rgba(43,22,13,0.22), 0 0 44px ${previewFam.glowColor}, inset 0 1px 0 rgba(255,248,238,0.10)`
+                      : '0 0 40px rgba(183,106,47,0.10), 0 24px 70px rgba(43,22,13,0.20), inset 0 1px 0 rgba(255,248,238,0.09)',
                   }}
                   transition={{ duration: 1.0, ease: LUXURY }}
                 >
@@ -290,12 +308,12 @@ export default function CustomFragrance() {
                       <motion.div
                         key={previewFam.id}
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: 0.6 + intensityFactor * 0.8 }}
+                        animate={{ opacity: 0.34 + intensityFactor * 0.28 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.9 }}
                         className="absolute inset-0 pointer-events-none"
                         style={{
-                          background: `radial-gradient(ellipse at 50% 88%, ${previewFam.glowColor} 0%, transparent 62%)`,
+                          background: `radial-gradient(ellipse at 50% 78%, ${previewFam.glowColor} 0%, transparent 62%)`,
                         }}
                       />
                     )}
@@ -315,6 +333,7 @@ export default function CustomFragrance() {
               </div>
             </div>
           </div>
+          </div>
         </div>
 
         {/* Mobile compact preview */}
@@ -322,10 +341,14 @@ export default function CustomFragrance() {
           <BottlePreview selections={selections} compact />
         </div>
 
-        {/* Atmospheric bridge to footer */}
-        <div className="h-24 pointer-events-none" style={{
-          background: 'linear-gradient(to bottom, transparent 0%, rgba(18,10,8,0.65) 60%, rgba(10,6,6,0.98) 100%)',
-        }} />
+        {/* Restrained divider before footer */}
+        <div
+          className="h-px pointer-events-none"
+          style={{
+            background: 'linear-gradient(90deg, transparent, rgba(200,169,107,0.22), transparent)',
+            boxShadow: '0 0 30px rgba(183,106,47,0.08)',
+          }}
+        />
       </div>
     </motion.main>
   )

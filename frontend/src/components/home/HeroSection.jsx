@@ -138,8 +138,8 @@ function CinematicBottle({ springX, springY }) {
         style={{
           width: 560, height: 560,
           top: '50%', left: '50%', x: '-50%', y: '-50%',
-          background: 'radial-gradient(ellipse, rgba(201,168,76,0.11) 0%, transparent 65%)',
-          filter: 'blur(50px)',
+          background: 'radial-gradient(ellipse, rgba(183,106,47,0.16) 0%, rgba(200,169,107,0.08) 38%, transparent 66%)',
+          filter: 'blur(42px)',
           scale: glowScale,
         }}
         animate={{ opacity: [0.6, 1, 0.6] }}
@@ -150,16 +150,16 @@ function CinematicBottle({ springX, springY }) {
       <div className="absolute pointer-events-none" style={{
         width: 380, height: 480,
         top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-        background: 'radial-gradient(ellipse, rgba(59,31,15,0.5) 0%, transparent 70%)',
-        filter: 'blur(60px)',
+        background: 'radial-gradient(ellipse, rgba(43,22,13,0.56) 0%, transparent 70%)',
+        filter: 'blur(52px)',
       }} />
 
       {/* Visual bridge — glow bleeds toward left text */}
       <div className="absolute pointer-events-none" style={{
         width: 300, height: 200,
         top: '50%', left: '-10%', transform: 'translateY(-50%)',
-        background: 'radial-gradient(ellipse at 100% 50%, rgba(120,70,20,0.1) 0%, transparent 80%)',
-        filter: 'blur(40px)',
+        background: 'radial-gradient(ellipse at 100% 50%, rgba(183,106,47,0.10) 0%, transparent 80%)',
+        filter: 'blur(32px)',
       }} />
 
       {/* L3: smoke wisps */}
@@ -168,7 +168,7 @@ function CinematicBottle({ springX, springY }) {
           animate={{ y: [0, -60], opacity: [0, 0.08, 0], scale: [0.9, 1.4] }}
           transition={{ duration: 9, repeat: Infinity, delay: del, ease: 'easeOut' }}
         >
-          <div style={{ width: '100%', height: '100%', background: 'radial-gradient(ellipse, rgba(201,168,76,0.15) 0%, transparent 70%)', filter: 'blur(22px)' }} />
+          <div style={{ width: '100%', height: '100%', background: 'radial-gradient(ellipse, rgba(183,106,47,0.12) 0%, transparent 70%)', filter: 'blur(18px)' }} />
         </motion.div>
       ))}
 
@@ -267,11 +267,11 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex justify-center items-center overflow-hidden luxury-page" style={{ paddingTop: 'clamp(96px, 10vw, 130px)' }}>
 
       {/* Ambient orbs */}
-      <div ref={orb1Ref} className="absolute top-1/4 left-1/4 w-[560px] h-[560px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(201,168,76,0.13) 0%, transparent 68%)', filter: 'blur(44px)' }} />
-      <div ref={orb2Ref} className="absolute bottom-1/3 right-1/4 w-[520px] h-[520px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(201,168,76,0.10) 0%, rgba(61,107,94,0.07) 42%, transparent 72%)', filter: 'blur(62px)' }} />
-      <div ref={orb3Ref} className="absolute top-2/3 left-1/2 w-[420px] h-[420px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(132,70,24,0.12) 0%, transparent 70%)', filter: 'blur(54px)' }} />
+      <div ref={orb1Ref} className="absolute top-1/4 left-1/4 w-[560px] h-[560px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(183,106,47,0.08) 0%, transparent 68%)', filter: 'blur(34px)' }} />
+      <div ref={orb2Ref} className="absolute bottom-1/3 right-1/4 w-[520px] h-[520px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(183,106,47,0.07) 0%, rgba(43,22,13,0.05) 42%, transparent 72%)', filter: 'blur(44px)' }} />
+      <div ref={orb3Ref} className="absolute top-2/3 left-1/2 w-[420px] h-[420px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(132,70,24,0.08) 0%, transparent 70%)', filter: 'blur(38px)' }} />
       {/* Deep amber sweep behind bottle */}
-      <div className="absolute top-0 right-0 w-[760px] h-full pointer-events-none" style={{ background: 'radial-gradient(ellipse at 80% 50%, rgba(170,98,28,0.16) 0%, rgba(64,20,35,0.10) 42%, transparent 66%)', filter: 'blur(82px)' }} />
+      <div className="absolute top-0 right-0 w-[760px] h-full pointer-events-none" style={{ background: 'radial-gradient(ellipse at 72% 50%, rgba(183,106,47,0.18) 0%, rgba(43,22,13,0.08) 45%, transparent 68%)', filter: 'blur(58px)' }} />
 
       {/* Arabesque corners */}
       <div className="absolute left-6 md:left-10 pointer-events-none" style={{ top: 'clamp(100px, 11vw, 136px)' }}><ArabesqueCorner /></div>
@@ -285,7 +285,14 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'linear-gradient(to right, rgba(247,243,238,0.18) 0%, transparent 45%, rgba(20,10,5,0.28) 100%)',
+          background: 'linear-gradient(to right, rgba(247,243,238,0.04) 0%, rgba(183,106,47,0.12) 48%, rgba(27,18,13,0.18) 100%)',
+          zIndex: 0,
+        }}
+      />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 50%, transparent 48%, rgba(43,22,13,0.13) 100%)',
           zIndex: 0,
         }}
       />
@@ -305,7 +312,7 @@ export default function HeroSection() {
               <motion.h1
                 variants={lineReveal}
                 className="luxury-hero italic text-[52px] sm:text-[72px] md:text-[96px] lg:text-[106px] xl:text-[130px]"
-                style={{ color: '#3B1F0F' }}
+                style={{ color: '#2B160D' }}
               >
                 Crafted
               </motion.h1>
@@ -313,8 +320,8 @@ export default function HeroSection() {
             <div className="overflow-hidden">
               <motion.h1
                 variants={lineReveal}
-                className="luxury-hero text-[52px] sm:text-[72px] md:text-[96px] lg:text-[106px] xl:text-[130px] text-gold-gradient"
-                style={{ fontWeight: 400 }}
+                className="luxury-hero text-[52px] sm:text-[72px] md:text-[96px] lg:text-[106px] xl:text-[130px]"
+                style={{ fontWeight: 400, color: '#9A6127' }}
               >
                 For You.
               </motion.h1>
@@ -331,7 +338,7 @@ export default function HeroSection() {
           <motion.p variants={item} className="editorial-copy tracking-[0.01em]" style={{ maxWidth: 460 }}>
             Custom-made fragrances, blended from the finest attars.
             <br />
-            <span className="gold-soft">Blended fresh, crafted only for you.</span>
+            <span style={{ color: '#2B160D', fontWeight: 500 }}>Blended fresh, crafted only for you.</span>
           </motion.p>
 
           {/* Premium CTAs */}
@@ -365,12 +372,12 @@ export default function HeroSection() {
           {/* Stats */}
           <motion.div variants={item} className="relative grid w-full max-w-[380px] grid-cols-2 gap-x-8 border-t border-gold-400/10 pt-6 mt-1 sm:w-auto sm:min-w-[360px] sm:gap-x-12">
             <div className="flex min-w-0 flex-col items-center gap-2 px-2 lg:items-start">
-              <p className="font-heading text-[26px] md:text-[30px] text-gold-300 leading-none">500+</p>
+              <p className="font-heading text-[26px] md:text-[30px] leading-none" style={{ color: '#2B160D' }}>500+</p>
               <p className="editorial-label text-center !text-[10px] tracking-[0.18em] sm:tracking-[0.22em] leading-relaxed lg:text-left">Blends Created</p>
             </div>
             <div className="absolute bottom-1 top-6 left-1/2 w-px -translate-x-1/2" style={{ background: 'linear-gradient(to bottom, transparent, rgba(201,168,76,0.24), transparent)' }} />
             <div className="flex min-w-0 flex-col items-center gap-2 px-2 lg:items-start">
-              <p className="font-heading text-[26px] md:text-[30px] text-gold-300 leading-none">100%</p>
+              <p className="font-heading text-[26px] md:text-[30px] leading-none" style={{ color: '#2B160D' }}>100%</p>
               <p className="editorial-label text-center !text-[10px] tracking-[0.18em] sm:tracking-[0.22em] leading-relaxed lg:text-left">Custom Made</p>
             </div>
           </motion.div>
@@ -383,7 +390,7 @@ export default function HeroSection() {
       </div>
 
 {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-36 pointer-events-none" style={{ background: 'linear-gradient(to top, #F7F3EE, transparent)' }} />
+      <div className="absolute bottom-0 left-0 right-0 h-28 pointer-events-none" style={{ background: 'linear-gradient(to top, #F7F3EE, rgba(247,243,238,0))' }} />
     </section>
   )
 }
