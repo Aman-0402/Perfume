@@ -42,11 +42,11 @@ function NavItem({ label, to }) {
             <span
               className="text-[12px] tracking-[0.28em] uppercase font-semibold transition-all duration-400"
               style={{
-                color: isActive ? 'rgba(226,194,125,1)' : 'rgba(245,241,234,0.92)',
-                textShadow: isActive ? '0 0 20px rgba(201,168,76,0.42)' : '0 0 16px rgba(0,0,0,0.28)',
+                color: isActive ? 'rgba(201,168,76,1)' : '#3B1F0F',
+                textShadow: isActive ? '0 0 20px rgba(201,168,76,0.42)' : 'none',
               }}
-              onMouseEnter={e => { if (!isActive) { e.currentTarget.style.color = 'rgba(224,188,100,1)'; e.currentTarget.style.textShadow = '0 0 16px rgba(201,168,76,0.35)' } }}
-              onMouseLeave={e => { if (!isActive) { e.currentTarget.style.color = 'rgba(245,241,234,0.92)'; e.currentTarget.style.textShadow = '0 0 16px rgba(0,0,0,0.28)' } }}
+              onMouseEnter={e => { if (!isActive) { e.currentTarget.style.color = 'rgba(201,168,76,1)'; e.currentTarget.style.textShadow = '0 0 16px rgba(201,168,76,0.35)' } }}
+              onMouseLeave={e => { if (!isActive) { e.currentTarget.style.color = '#3B1F0F'; e.currentTarget.style.textShadow = 'none' } }}
             >
               {label}
             </span>
@@ -97,19 +97,19 @@ export default function Navbar() {
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-700"
         style={isScrolled
           ? {
-              background: 'linear-gradient(to bottom, rgba(5,3,2,0.98) 0%, rgba(8,5,3,0.96) 100%)',
+              background: 'linear-gradient(to bottom, rgba(250,247,242,0.97) 0%, rgba(245,241,234,0.95) 100%)',
               backdropFilter: 'blur(20px)',
               WebkitBackdropFilter: 'blur(20px)',
-              borderBottom: '1px solid rgba(176,141,87,0.14)',
+              borderBottom: '1px solid rgba(201,168,76,0.18)',
               paddingTop: '12px',
               paddingBottom: '6px',
-              boxShadow: '0 4px 40px rgba(0,0,0,0.6), 0 1px 0 rgba(176,141,87,0.08)',
+              boxShadow: '0 4px 40px rgba(59,31,15,0.08), 0 1px 0 rgba(201,168,76,0.10)',
             }
           : {
-              background: 'linear-gradient(to bottom, rgba(5,3,2,0.92) 0%, rgba(8,5,3,0.86) 80%, rgba(5,3,2,0.72) 100%)',
+              background: 'linear-gradient(to bottom, rgba(250,247,242,0.90) 0%, rgba(250,247,242,0.82) 80%, rgba(250,247,242,0.70) 100%)',
               backdropFilter: 'blur(16px)',
               WebkitBackdropFilter: 'blur(16px)',
-              borderBottom: '1px solid rgba(176,141,87,0.09)',
+              borderBottom: '1px solid rgba(201,168,76,0.10)',
               paddingTop: '20px',
               paddingBottom: '12px',
             }
@@ -207,7 +207,7 @@ export default function Navbar() {
           <motion.button
             onClick={() => setMenuOpen((v) => !v)}
             className="md:hidden p-2 transition-colors duration-300"
-            style={{ color: 'rgba(245,240,232,0.7)' }}
+            style={{ color: '#3B1F0F' }}
             whileTap={{ scale: 0.88 }}
             aria-label="Toggle menu"
           >
@@ -246,7 +246,7 @@ export default function Navbar() {
             animate="open"
             exit="closed"
             className="fixed inset-0 z-40 md:hidden"
-            style={{ background: 'rgba(3,2,1,1)', backdropFilter: 'blur(24px)' }}
+            style={{ background: 'rgba(250,247,242,0.98)', backdropFilter: 'blur(24px)' }}
           >
             {/* Gold accent lines */}
             <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent 5%, rgba(201,168,76,0.65) 40%, rgba(226,194,125,0.80) 50%, rgba(201,168,76,0.65) 60%, transparent 95%)' }} />
@@ -274,8 +274,8 @@ export default function Navbar() {
                       <span
                         className="font-heading text-3xl sm:text-4xl font-light tracking-wide transition-all duration-300"
                         style={{
-                          color: isActive ? 'rgba(176,141,87,0.95)' : 'rgba(255,252,245,0.88)',
-                          textShadow: isActive ? '0 0 30px rgba(176,141,87,0.25)' : 'none',
+                          color: isActive ? 'rgba(201,168,76,1)' : 'rgba(59,31,15,0.88)',
+                          textShadow: isActive ? '0 0 30px rgba(201,168,76,0.25)' : 'none',
                         }}
                       >
                         {label}
@@ -300,7 +300,7 @@ export default function Navbar() {
               <motion.div custom={NAV_LINKS.length + 2} variants={linkVariants} initial="closed" animate="open"
                 className="absolute bottom-10 flex flex-col items-center gap-2">
                 <div className="w-8 h-px" style={{ background: 'rgba(176,141,87,0.3)' }} />
-                <p className="text-[9px] tracking-[0.4em] uppercase" style={{ color: 'rgba(255,252,245,0.55)' }}>
+                <p className="text-[9px] tracking-[0.4em] uppercase" style={{ color: 'rgba(59,31,15,0.45)' }}>
                   Mandvi, Vadodara · Since India
                 </p>
               </motion.div>

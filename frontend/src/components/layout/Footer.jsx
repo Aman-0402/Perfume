@@ -145,10 +145,10 @@ export default function Footer() {
                       background: 'rgba(201,168,76,0.12)',
                     }}
                     onMouseEnter={e => {
-                      e.currentTarget.style.borderColor = 'rgba(201,168,76,1)'
-                      e.currentTarget.style.color = '#0a0603'
-                      e.currentTarget.style.background = 'rgba(201,168,76,1)'
-                      e.currentTarget.style.boxShadow = '0 0 20px rgba(201,168,76,0.35)'
+                      e.currentTarget.style.borderColor = '#3D6B5E'
+                      e.currentTarget.style.color = '#ffffff'
+                      e.currentTarget.style.background = '#3D6B5E'
+                      e.currentTarget.style.boxShadow = '0 0 20px rgba(61,107,94,0.45)'
                     }}
                     onMouseLeave={e => {
                       e.currentTarget.style.borderColor = 'rgba(201,168,76,0.55)'

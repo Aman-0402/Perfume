@@ -15,6 +15,10 @@
   --color-espresso: #130B08;
   --color-plum: #201016;
   --color-burgundy: #321118;
+  --color-cream: #FAF7F2;
+  --color-cream-dark: #F0EBE1;
+  --color-teal: #3D6B5E;
+  --color-teal-light: #4F8A7A;
 
   --font-heading: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
@@ -34,13 +38,11 @@ html {
 }
 
 body {
-  background-color: #090605;
+  background-color: #FAF7F2;
   background-image:
-    radial-gradient(ellipse at 18% 4%, rgba(107,45,18,0.18) 0%, transparent 42%),
-    radial-gradient(ellipse at 82% 16%, rgba(72,20,36,0.13) 0%, transparent 38%),
-    radial-gradient(ellipse at 72% 92%, rgba(124,76,24,0.11) 0%, transparent 44%),
-    linear-gradient(180deg, #0c0807 0%, #120b08 42%, #0b0706 100%);
-  color: var(--color-ivory);
+    radial-gradient(ellipse at 20% 10%, rgba(201,168,76,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(61,107,94,0.04) 0%, transparent 50%);
+  color: #3B1F0F;
   font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.6;
@@ -54,7 +56,7 @@ body {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.055;
+  opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 256px 256px;
 }
@@ -65,8 +67,7 @@ body {
   z-index: 9998;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at center, transparent 52%, rgba(0,0,0,0.34) 100%),
-    radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.055) 0%, transparent 54%);
+    radial-gradient(ellipse at center, transparent 60%, rgba(240,235,225,0.30) 100%);
   mix-blend-mode: normal;
 }
 
@@ -75,7 +76,7 @@ body {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-black);
+  background: var(--color-cream-dark);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--color-gold-500);
@@ -91,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.005em;
-  color: #F5F1EA;
+  color: #3B1F0F;
 }
 
 p,
@@ -111,8 +112,8 @@ span {
   font-weight: 300;
   line-height: 0.9;
   letter-spacing: -0.025em;
-  color: #F5F1EA;
-  text-shadow: 0 2px 30px rgba(255,255,255,0.08), 0 0 58px rgba(201,168,76,0.14);
+  color: #3B1F0F;
+  text-shadow: 0 2px 30px rgba(59,31,15,0.06), 0 0 58px rgba(201,168,76,0.10);
 }
 
 .luxury-heading {
@@ -120,7 +121,7 @@ span {
   font-weight: 300;
   line-height: 0.98;
   letter-spacing: -0.012em;
-  color: #F5F1EA;
+  color: #3B1F0F;
 }
 
 .luxury-card-title {
@@ -128,7 +129,7 @@ span {
   font-weight: 400;
   line-height: 1.04;
   letter-spacing: -0.006em;
-  color: #F5F1EA;
+  color: #3B1F0F;
 }
 
 .luxury-body {
@@ -136,7 +137,7 @@ span {
   font-size: 0.975rem;
   line-height: 1.88;
   font-weight: 400;
-  color: rgba(245,241,234,0.90);
+  color: rgba(59,31,15,0.80);
 }
 
 .luxury-label {
@@ -145,7 +146,7 @@ span {
   letter-spacing: 0.24em;
   font-weight: 600;
   text-transform: uppercase;
-  color: rgba(200,169,107,0.88);
+  color: #C9A84C;
 }
 
 .editorial-label {
@@ -163,11 +164,11 @@ span {
   font-size: clamp(0.94rem, 0.9rem + 0.16vw, 1.06rem);
   line-height: 1.88;
   font-weight: 400;
-  color: rgba(245,241,234,0.90);
+  color: rgba(59,31,15,0.80);
 }
 
 .editorial-muted {
-  color: rgba(236,230,220,0.78);
+  color: rgba(92,52,32,0.70);
 }
 
 .gold-soft {
@@ -191,20 +192,20 @@ span {
 
 /* ─── Utility: Glassmorphism ──────────────────────────────────────────────── */
 .glass {
-  background: rgba(20, 12, 9, 0.66);
+  background: rgba(255,255,255,0.68);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 194, 125, 0.18);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.025), 0 24px 70px rgba(0,0,0,0.32);
+  border: 1px solid rgba(201,168,76,0.22);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.60), 0 24px 70px rgba(59,31,15,0.08);
 }
 
 /* ─── Cinematic luxury atmosphere utilities ──────────────────────────────── */
 .luxury-page {
   background:
-    radial-gradient(ellipse 72% 54% at 20% 8%, rgba(97,39,19,0.16) 0%, transparent 58%),
-    radial-gradient(ellipse 62% 48% at 82% 22%, rgba(80,23,41,0.12) 0%, transparent 58%),
-    radial-gradient(ellipse 68% 46% at 50% 100%, rgba(117,72,22,0.10) 0%, transparent 60%),
-    linear-gradient(180deg, #0a0705 0%, #0c0806 100%);
+    radial-gradient(ellipse 72% 54% at 20% 8%, rgba(201,168,76,0.06) 0%, transparent 58%),
+    radial-gradient(ellipse 62% 48% at 82% 22%, rgba(61,107,94,0.04) 0%, transparent 58%),
+    radial-gradient(ellipse 68% 46% at 50% 100%, rgba(201,168,76,0.04) 0%, transparent 60%),
+    linear-gradient(180deg, #FAF7F2 0%, #F0EBE1 100%);
 }
 
 .luxury-section {
@@ -220,9 +221,9 @@ span {
   z-index: -2;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 80% 58% at 18% 28%, rgba(102,42,22,0.12) 0%, transparent 66%),
-    radial-gradient(ellipse 68% 50% at 86% 64%, rgba(64,20,35,0.10) 0%, transparent 68%),
-    linear-gradient(180deg, rgba(9,6,5,0.80) 0%, rgba(9,6,5,0.82) 100%);
+    radial-gradient(ellipse 80% 58% at 18% 28%, rgba(201,168,76,0.05) 0%, transparent 66%),
+    radial-gradient(ellipse 68% 50% at 86% 64%, rgba(61,107,94,0.04) 0%, transparent 68%),
+    linear-gradient(180deg, rgba(250,247,242,0.78) 0%, rgba(250,247,242,0.80) 100%);
 }
 
 .luxury-section::after {
@@ -238,9 +239,9 @@ span {
 
 .luxury-section-alt::before {
   background:
-    radial-gradient(ellipse 78% 55% at 78% 25%, rgba(104,35,49,0.14) 0%, transparent 66%),
-    radial-gradient(ellipse 72% 54% at 8% 74%, rgba(128,75,22,0.10) 0%, transparent 68%),
-    linear-gradient(180deg, rgba(9,6,5,0.82) 0%, rgba(9,6,5,0.80) 48%, rgba(9,6,5,0.82) 100%);
+    radial-gradient(ellipse 78% 55% at 78% 25%, rgba(201,168,76,0.05) 0%, transparent 66%),
+    radial-gradient(ellipse 72% 54% at 8% 74%, rgba(61,107,94,0.04) 0%, transparent 68%),
+    linear-gradient(180deg, rgba(240,235,225,0.80) 0%, rgba(240,235,225,0.78) 48%, rgba(240,235,225,0.80) 100%);
 }
 
 .luxury-divider-glow {
@@ -258,14 +259,13 @@ span {
 }
 
 .luxury-panel {
-  background:
-    linear-gradient(160deg, rgba(31,17,13,0.88) 0%, rgba(14,10,9,0.92) 58%, rgba(34,13,19,0.78) 100%);
-  border: 1px solid rgba(226,194,125,0.14);
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(201,168,76,0.18);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.035),
-    inset 0 -1px 0 rgba(201,168,76,0.035),
-    0 28px 80px rgba(0,0,0,0.36),
-    0 0 60px rgba(84,28,36,0.12);
+    inset 0 1px 0 rgba(255,255,255,0.70),
+    inset 0 -1px 0 rgba(201,168,76,0.06),
+    0 28px 80px rgba(59,31,15,0.08),
+    0 0 60px rgba(201,168,76,0.04);
 }
 
 /* ─── Responsive container ────────────────────────────────────────────────── */
@@ -296,4 +296,17 @@ span {
 .animate-marquee {
   animation: marquee 28s linear infinite;
   will-change: translate;
+}
+
+/* ─── Teal badge — Bestseller, Alcohol-Free ───────────────────────────────── */
+.teal-badge {
+  background: #3D6B5E;
+  color: #FAF7F2;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
 }
